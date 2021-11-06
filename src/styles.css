@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'Scheherazade New', serif;
+}
+
+.text_1 {
+  color: #666666; }
+
+.text_2 {
+  color: #6f7072; }

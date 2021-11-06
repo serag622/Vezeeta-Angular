@@ -1,0 +1,17 @@
+.navbar-nav a {
+  color: whitesmoke; }
+
+.navbar-nav a:hover {
+  text-decoration: underline;
+  color: whitesmoke; }
+
+.navBorder {
+  color: whitesmoke;
+  margin: 10px 0px;
+  text-align: center;
+  line-height: inherit; }
+
+@media screen and (max-width: 991px) {
+  .navBorder {
+    display: none; }
+  }

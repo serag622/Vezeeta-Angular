@@ -1,0 +1,16 @@
+ul {
+  padding: 0px;
+  margin: 0px; }
+
+footer ul li {
+  list-style-type: none;
+  margin-top: 15px; }
+
+footer ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1em; }
+
+footer ul li a:hover {
+  text-decoration: underline;
+  color: whitesmoke; }
