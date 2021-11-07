@@ -1,0 +1,11 @@
+#bkImage {
+  background-image: url("https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/34088/_next/static/images/search-header-background.jpg");
+}
+
+
+@media screen and (max-width: 768px) {
+
+  #bkImage {
+    display: none;
+  }
+}
