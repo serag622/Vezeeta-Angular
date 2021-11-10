@@ -17,20 +17,18 @@
                             نحن سعداء لتلقي استفساراتكم واقتراحاتكم.
                         </div>
                         <div>
-                            <form class="needs-validation">
+                            <form #myform="ngForm">
                                 <div class="d-flex flex-md-row  flex-column mt-3 mb-2 write">
                                     <label for="name"
                                         class="col-form-label title col-4 text-secondary fs-5">الاسم</label>
-                                    <input class="form-control form-control-sm" type="text" placeholder="الإسم بالكامل"
-                                        pattern="[A-Za-z]{6,20}" required name="name" id="name">
+                                    <input class="form-control form-control-sm" ngModel [ngClass]='{"invalid":name.invalid && name.touched,"input":name.invalid && name.touched}' type="text" placeholder="الإسم بالكامل"
+                                        pattern="[A-Za-z]{6,20}" #name="ngModel" required name="name" id="name">
 
                                 </div>
                                 <div class="d-flex flex-md-row flex-column mt-2 mb-1 diV">
                                     <label for="namevalid" class="col-form-label  col-md-4 col-0 text-secondary fs-5">
                                     </label>
-                                    <div id="namevalid">
-                                        يرجي إدخال الأسم
-                                    </div>
+                                    <span class="div" *ngIf="name.invalid && name.touched && name.errors?.required">يرجي إدخال الإسم</span>
                                 </div>
 
                                 <div class="d-flex flex-md-row  flex-column  mt-3 mb-2 write">
@@ -38,7 +36,7 @@
                                         المويايل</label>
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control form-control-sm" id="phone"
-                                            placeholder="رقم الموبايل" name="phone" required
+                                            placeholder="رقم الموبايل" name="phone" ngModel #phone="ngModel" ngModel [ngClass]='{"invalid":phone.invalid && phone.touched,"input":phone.invalid && phone.touched}' required
                                             pattern="01(0|1|2|5)[0-9]{8}">
 
                                         <span class="input-group-text" id="eg">
@@ -50,31 +48,31 @@
                                 <div class="d-flex flex-md-row flex-column mt-1 mb-2 diV">
                                     <label for="numbervalid" class="col-form-label  col-md-4 col-0 text-secondary fs-5">
                                     </label>
-                                    <div class="diV" id="numbervalid">
-                                        يرجي إدخال رقم الموبايل
-                                    </div>
+                                    <span class="div" *ngIf="phone.invalid && phone.touched && phone.errors?.required"> يرجي إدخال رقم الموبايل</span>
                                 </div>
                                 <div class="d-flex flex-md-row  flex-column mt-3 mb-2 write">
                                     <label for="name" class="col-form-label title col-4 text-secondary fs-5">البريد
                                         الإلكتروني</label>
-                                    <input class="form-control form-control-sm" type="email"
-                                        placeholder="example@domain.com" required
-                                        pattern="([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})"
-                                        onfocus="" name="email" id="email">
+                                    <input class="form-control form-control-sm" ngModel #email="ngModel" type="email"
+                                        placeholder="example@domain.com" ngModel [ngClass]='{"invalid":email.invalid && email.touched && !valid,"input":email.invalid && email.touched&& !valid }' ngModel required
+                                      
+                                        onfocus="" name="email" id="email" (keyup)="validateEmail(email)">
 
                                 </div>
                                 <div class="d-flex flex-md-row flex-column mt-1 mb-2 div">
                                     <label for="namevalid" class="col-form-label  col-md-4 col-0 text-secondary fs-5">
                                     </label>
-                                    <div class="diV" id="namevalid">
-                                        يرجي إدخال الإيميل
+                                    <div>
+                                         <div class="div"  #ele *ngIf="email.invalid && email.touched && email.errors?.required"> يرجي إدخال البريد الإلكتروني</div>
+                                    <div class="div" *ngIf="email.touched && !valid && !validEmpty">يرجى إدخال بريد إلكتروني صحيح</div>
                                     </div>
+                                   
                                 </div>
                                 <div class="d-flex flex-row">
                                     <label for="name" class="col-form-label  col-md-4 col-0 text-secondary fs-5">
                                     </label>
-                                    <input class="btn btn-danger px-5 px-md-4 " onclick="valid()" type="submit"
-                                        value="ارسال" pattern="[A-Za-z]{9,20}">
+                                    <input class="btn btn-danger px-5 px-md-4 " 
+                                        value="ارسال" pattern="[A-Za-z]{9,20}" type="button" (click)="submit(myform)">
                                 </div>
                             </form>
                         </div>

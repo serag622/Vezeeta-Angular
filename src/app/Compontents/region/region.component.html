@@ -1,0 +1,30 @@
+<!-- Header -->
+
+<app-search-bar></app-search-bar>
+
+<!-- middle section -->
+
+<!--search box  -->
+<div class="container-fluid middle">
+    <div class="container">
+        <div class="container-fluid pt-3 pb-3 ">
+            <div class="container">
+                <div class=" row mx-auto mb-2">
+                    <span style="font-size: .8rem;">
+                        <a href="#" class="v"><small class="t1"> فيزيتا</small> </a>
+                        <small class="t1">/</small>
+                        <small class="text-secondary mx-1">التخصصات</small>
+                    </span>
+                </div>
+            </div>
+
+            <div class="container">
+                <input type="text" class="form-control form-control-lg fw-bold search mb-4 p-2"
+                    placeholder="ابحث عن دكتور بالمحافظة" style="color:rgb(0, 112, 205) ;" #input (keyup)="search(input)">
+            </div>
+
+            <!-- Region is here -->
+            <app-region-details></app-region-details>
+        </div>
+    </div>
+</div>

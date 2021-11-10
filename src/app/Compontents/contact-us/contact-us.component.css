@@ -20,7 +20,7 @@ body {
 
 }
 
-input:required {
+.input{
     border: red 1px solid;
 }
 

@@ -7,6 +7,10 @@ import { NavBarComponent } from './Layout/nav-bar/nav-bar.component';
 import { FooterComponent } from './Layout/footer/footer.component';
 import { ContactUsComponent } from './Compontents/contact-us/contact-us.component';
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
+import { RegionComponent } from './Compontents/region/region.component';
+import { RegionDetailsComponent } from './Compontents/region-details/region-details.component';
+import { ColumnDataComponent } from './Compontents/column-data/column-data.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,15 @@ import { SearchBarComponent } from './shared/search-bar/search-bar.component';
     NavBarComponent,
     FooterComponent,
     ContactUsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    RegionComponent,
+    RegionDetailsComponent,
+    ColumnDataComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
