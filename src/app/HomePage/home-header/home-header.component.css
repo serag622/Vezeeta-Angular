@@ -1,0 +1,54 @@
+.header{
+  max-height: 700px;
+}
+
+.header_content{
+  color: grey;
+  top: 20px;
+  right: 10%;
+  font-weight: bold;
+}
+.header_center{
+  top:40%;
+  left:10% ;
+  width: 80%;
+  box-shadow: 0px 0px 3px gray;
+  border-radius: 15px;
+}
+
+.bar{
+  border: solid;
+  border-radius: 9px ;
+}
+
+.col-border{
+  border-left: 1px solid gray;
+}
+
+.header ul{
+  list-style: none;
+}
+
+
+#line{
+  width: 50%;
+  height: 5px;
+  transition: transform 1s ease;
+}
+
+@media screen and (max-width: 950px) {
+
+  .header_center{
+      display: none;
+  }
+}
+
+.header_bottom{
+  bottom: 4px;
+  left: 50%;
+  font-size: 3em;
+  color:grey ;
+}
+.header_bottom i:hover{
+  transform: scale(1.5);
+}

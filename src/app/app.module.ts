@@ -12,6 +12,13 @@ import { RegionComponent } from './Compontents/region/region.component';
 import { RegionDetailsComponent } from './Compontents/region-details/region-details.component';
 import { ColumnDataComponent } from './Compontents/column-data/column-data.component';
 
+import { HomeComponent } from './HomePage/home/home.component';
+import { HomeHeaderComponent } from './HomePage/home-header/home-header.component';
+import { HeadingComponent } from './Body/heading/heading.component';
+import { DoctorProfileComponent } from './Body/doctor-profile/doctor-profile.component';
+import { DoctorInformationComponent } from './Body/doctor-information/doctor-information.component';
+import { BookingInformationComponent } from './Body/booking-information/booking-information.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +28,13 @@ import { ColumnDataComponent } from './Compontents/column-data/column-data.compo
     SearchBarComponent,
     RegionComponent,
     RegionDetailsComponent,
-    ColumnDataComponent
+    ColumnDataComponent,
+    HomeComponent,
+    HomeHeaderComponent
+    HeadingComponent,
+    DoctorProfileComponent,
+    DoctorInformationComponent,
+    BookingInformationComponent
   ],
   imports: [
     BrowserModule,
