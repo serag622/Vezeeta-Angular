@@ -1,0 +1,12 @@
+.docs li {
+    list-style-type: none;
+
+}
+.doc a {
+    text-decoration: none;
+    color: gray;
+}
+.doc a:hover {
+    text-decoration: underline;
+    color: rgb(0, 112, 205);
+}

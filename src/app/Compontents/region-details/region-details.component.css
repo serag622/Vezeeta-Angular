@@ -1,0 +1,28 @@
+.doc {
+    border-radius: 10px;
+}
+
+.doc a {
+    text-decoration: none;
+    color: gray;
+}
+.docs li {
+    list-style-type: none;
+
+}
+
+.doc a:hover {
+    text-decoration: underline;
+    color: rgb(0, 112, 205);
+}
+.bg{
+    background-color: rgb(0, 112, 205);;
+}
+.title::before {
+    content: "+";
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
