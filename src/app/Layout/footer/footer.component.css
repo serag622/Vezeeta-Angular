@@ -1,16 +1,20 @@
 ul {
   padding: 0px;
-  margin: 0px; }
+  margin: 15px;
+}
 
 footer ul li {
   list-style-type: none;
-  margin-top: 15px; }
+  margin-top: 15px;
+}
 
 footer ul li a {
   text-decoration: none;
   color: whitesmoke;
-  font-size: 1em; }
+  font-size: 1em;
+}
 
 footer ul li a:hover {
   text-decoration: underline;
-  color: whitesmoke; }
+  color: whitesmoke;
+}

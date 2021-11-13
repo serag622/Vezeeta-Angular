@@ -15,3 +15,8 @@
   .bcolor{
     background-color: rgba(49,120,195)!important;
   }
+body {
+  /* overflow-x: hidden; */
+  background-color: rgb(240, 240, 240) !important;
+}
+
