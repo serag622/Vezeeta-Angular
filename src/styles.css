@@ -3,7 +3,20 @@
   font-family: 'Scheherazade New', serif;
 }
 
+.text_1 {
+  color: #666666; }
+
+.text_2 {
+  color: #6f7072; }
+  .text_3{
+    color:rgba(49,120,195);
+  }
+
+  .bcolor{
+    background-color: rgba(49,120,195)!important;
+  }
 body {
   /* overflow-x: hidden; */
   background-color: rgb(240, 240, 240) !important;
 }
+
