@@ -1,0 +1,11 @@
+.middle {
+    background-color: rgb(226, 230, 234);
+}
+
+.search {
+    border-radius: 10px;
+}
+
+.search:read-write {
+    box-shadow: 1px 1px rgb(165, 164, 164);
+}

@@ -1,0 +1,56 @@
+body {
+    /*   overflow: hidden; */
+    overflow-x: hidden;
+
+}
+.parent {
+    margin: 0;
+    padding: 0;
+}
+.head {
+    background-image: url("https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/33079/_next/static/images/search-header-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(236, 236, 236);
+
+}
+
+.middle {
+    background-color: rgb(226, 230, 234);
+
+}
+
+.input{
+    border: red 1px solid;
+}
+
+input:valid {
+    border: blue 1px solid;
+}
+
+
+.div {
+    color: red;
+}
+
+.title::after {
+    content: "*";
+    color: red;
+    font-size: small;
+
+}
+
+.email {
+    text-decoration: none;
+    color: gray;
+}
+
+.email:hover {
+    color: red;
+}
+
+
+.vl {
+    border-left: 2px solid gray;
+    height: auto;
+}
