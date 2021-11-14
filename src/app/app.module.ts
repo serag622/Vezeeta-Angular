@@ -30,7 +30,7 @@ import { BookingInformationComponent } from './Body/booking-information/booking-
     RegionDetailsComponent,
     ColumnDataComponent,
     HomeComponent,
-    HomeHeaderComponent
+    HomeHeaderComponent,
     HeadingComponent,
     DoctorProfileComponent,
     DoctorInformationComponent,

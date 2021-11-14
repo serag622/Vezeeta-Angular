@@ -11,6 +11,7 @@ import { regionService } from 'src/app/services/region-service.service';
 export class RegionDetailsComponent implements OnChanges {
   regionList: Region[] = [];
   regionDetailsToBeViewed: RegionDetails[] = [];
+  num:number=0;
 
   constructor(private regionService: regionService) {
     this.regionService.searchEvent.subscribe((next) => {
