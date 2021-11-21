@@ -3,11 +3,6 @@
   <section class="container">
     <nav class="navbar navbar-expand-lg  px-3 justify-content-between ">
 
-      <div class=" navbar-brand text-start ">
-        <img class="img-fluid"
-          src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/33079/_next/static/images/whitelogowithdotcom.png" />
-      </div>
-
       <div>
         <button class="navbar-toggler btn-primary me-2" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false"
@@ -32,19 +27,24 @@
              </select>
              <span class="navBorder">|</span>
 
-             <a class="nav-link" href="#" aria-disabled="true">English</a>
+             <a class="nav-link" aria-disabled="true">English</a>
              <span class="navBorder">|</span>
-             <a class="nav-link" routerLink="contactUS">اتصل بنا</a>
+             <a class="nav-link" routerLink="/ContactUs">اتصل بنا</a>
              <span class="navBorder">|</span>
-             <a class="nav-link" href="doctots.html">فزيتا للاطباء</a>
+             <a class="nav-link" routerLink="/DoctorProfile/0">فزيتا للاطباء</a>
              <span class="navBorder">|</span>
-             <a class="nav-link" href="login.html">دخول</a>
+             <a class="nav-link" routerLink="/Login">دخول</a>
              <span class="navBorder">|</span>
-             <a class=" nav-link btn  border-1 border-light px-1 me-1" href="Register.html"> انضم الان</a>
-           </div>
+             <a class=" nav-link btn  border-1 border-light px-1 me-1" routerLink="/Register"> انضم الان</a>
+           </div> 
           </div>
         </div>
-      </div>
+        
+        <div class=" navbar-brand text-start ">
+          <a routerLink="/home"><img class="img-fluid"
+            src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/33079/_next/static/images/whitelogowithdotcom.png" />
+            </a>
+        </div>
     </nav>
   </section>
 </section>
