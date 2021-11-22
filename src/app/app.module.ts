@@ -18,6 +18,7 @@ import { HeadingComponent } from './Compontents/Shared/heading/heading.component
 import { DoctorProfileComponent } from './Compontents/DoctorPage/doctor-profile/doctor-profile.component';
 import { DoctorInformationComponent } from './Compontents/DoctorPage/doctor-information/doctor-information.component';
 import { BookingInformationComponent } from './Compontents/DoctorPage/booking-information/booking-information.component';
+import { SearchBarComponent } from './Compontents/Shared/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { BookingInformationComponent } from './Compontents/DoctorPage/booking-in
     HeadingComponent,
     DoctorProfileComponent,
     DoctorInformationComponent,
-    BookingInformationComponent
+    BookingInformationComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
