@@ -1,0 +1,15 @@
+.bar{
+    border: solid;
+    border-radius: 9px ;
+}
+
+.col-border{
+    border-left: 1px solid gray;
+}
+
+.bar ul{
+    list-style: none;
+}
+
+
+

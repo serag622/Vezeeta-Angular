@@ -1,0 +1,75 @@
+* {
+  font-family: "Scheherazade New", serif;
+}
+
+/* ---------------------------Header---------------------------- */
+
+.navbar-nav a {
+  color: whitesmoke;
+}
+.navbar-nav a:hover {
+  text-decoration: underline;
+}
+
+.navBorder {
+  color: whitesmoke;
+  text-align: center;
+  line-height: inherit;
+}
+
+/* ----------------------------Body--------------------------- */
+
+#bkimage {
+  background-image: url("https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/34088/_next/static/images/search-header-background.jpg");
+}
+
+.collapse a:hover {
+  text-decoration: underline;
+}
+
+.collapse a {
+  text-decoration: none;
+  color: rgb(111, 112, 114);
+  font-size: 17px;
+  font-weight: bolder;
+  padding: 15px;
+}
+
+#boody {
+  padding: 27px;
+}
+
+#boody p > a {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: transform 0.5s ease-out;
+}
+
+#boody p > a:hover {
+  transform: scale(1.5);
+}
+
+/* ---------------------------Footer---------------------------- */
+ul {
+  padding: 10px;
+  margin: 0px;
+}
+
+footer ul li {
+  list-style-type: none;
+  margin-top: 15px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  position: relative;
+  left: 20px;
+  color: whitesmoke;
+  font-size: 1em;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+  color: whitesmoke;
+}
