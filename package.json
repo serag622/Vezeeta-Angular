@@ -21,6 +21,7 @@
     "@angular/router": "~12.2.0",
     "angularfire2": "^5.4.2",
     "firebase": "^9.5.0",
+    "firebasets": "^1.2.13",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
