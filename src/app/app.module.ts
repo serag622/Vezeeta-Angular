@@ -21,11 +21,10 @@ import { RegionDetailsComponent } from './Compontents/Region/Region-Details/regi
 import { ColumnDataComponent } from './Compontents/Region/Column-Data/column-data.component';
 import { environment } from 'src/environments/environment';
 
-import {  } from '@angular/fire'
-
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 
 @NgModule({
   declarations: [

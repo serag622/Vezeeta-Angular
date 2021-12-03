@@ -20,11 +20,13 @@
             </button>
           </div>
 
-          <div class="col-sm-6 col-12">
+
+           <div class="col-sm-6 col-12">
+            <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-longtitle="true"></div> -->
             <button class="btn social-btn btn-danger w-100" type="button">
               <span
-                ><i class="fab fa-google-plus-g"></i> Google الدخول
-                بـواسطه</span
+                ><i class="fab fa-google-plus-g"></i>  الدخول
+                بـواسطه Google</span
               >
             </button>
           </div>
@@ -33,7 +35,7 @@
         <p style="text-align: center">أو</p>
 
         <div class="text-end mb-3">
-          <label for="email" class="mb-2"> * البريد الإلكتروني </label>
+          <label for="email" class="mb-2">  البريد الإلكتروني </label>
           <input
             ngModel
             #email="ngModel"
@@ -59,7 +61,7 @@
         </div>
 
         <div class="text-end mb-3">
-          <label for="password" class="mb-2"> *كلمة المرور </label>
+          <label for="password" class="mb-2"> كلمة المرور </label>
           <input
             ngModel
             #password="ngModel"
@@ -84,7 +86,7 @@
           </div>
         </div>
 
-        <button class="btn btn-danger btn-block w-100" type="submit" [disabled]="L.invalid">
+        <button class="btn btn-danger btn-block w-100" type="submit">
           <i class="fas fa-sign-in-alt"></i>
           تسجيل الدخول
         </button>
@@ -107,12 +109,15 @@
           class="btn btn-primary btn-block w-100"
           type="button"
           id="btn-signup"
-          onclick="location.assign('./Register.html')"
+          (click)="toBe()"
         >
           <i class="fas fa-user-plus"></i>
           إنشاء حساب جديد
         </button>
       </form>
+      <div class="alert alert-danger" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
     </div>
   </section>
 </section>

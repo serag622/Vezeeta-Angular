@@ -2,33 +2,19 @@
   <section class="container">
     <nav class="navbar navbar-expand-lg px-3 justify-content-between">
       <div>
-        <button
-          class="navbar-toggler btn-primary me-2"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasExample"
-          aria-controls="offcanvasExample"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler btn-primary me-2" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false"
+          aria-label="Toggle navigation">
           <i class="fal fa-bars"></i>
         </button>
 
-        <div
-          class="offcanvas offcanvas-start bcolor navbar-collapse"
-          id="offcanvasExample"
-          aria-labelledby="offcanvasExampleLabel"
-        >
+        <div class="offcanvas offcanvas-start bcolor navbar-collapse" id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title text-light" id="offcanvasExampleLabel">
               Vezeeta
             </h5>
-            <button
-              type="button"
-              class="btn-close text-reset"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
 
           <div class="navbar-nav">
@@ -43,36 +29,30 @@
 
             <a class="nav-link" aria-disabled="true">English</a>
             <span class="navBorder">|</span>
+
             <a class="nav-link" routerLink="/ContactUs">اتصل بنا</a>
             <span class="navBorder">|</span>
+
             <a class="nav-link" routerLink="/DoctorProfile/0">فزيتا للاطباء</a>
             <span class="navBorder">|</span>
-            <a class="nav-link" routerLink="/Login">دخول</a>
-            <span class="navBorder">|</span>
-            <a
-              class="nav-link btn border-1 border-light px-1 me-1"
-              routerLink="/Register"
-            >
-              انضم الان</a
-            >
 
-            <a
-              class="nav-link btn border-1 border-light px-1 me-1"
-              routerLink="/Register"
-            >
-               الخروج</a
-            >
+            <a class="nav-link" routerLink="/Login" *ngIf="!isUser">دخول</a>
+            <span class="navBorder" *ngFor="!isUser">|</span>
 
+            <a class="nav-link btn border-1 border-light px-1 me-1" routerLink="/Register" *ngIf="!isUser">
+              انضم الان</a>
+
+            <a class="nav-link btn border-1 border-light px-2 me-2" *ngIf="isUser" (click)="logout()">
+              تسجيل الخروج</a>
+                          <!-- <a class="nav-link btn border-1 border-light px-2 me-2" *ngIf="isUser" (click)="logout()">
+              {{userDashbord.name}}</a> -->
           </div>
         </div>
       </div>
 
       <div class="navbar-brand text-start">
-        <a routerLink="/home"
-          ><img
-            class="img-fluid"
-            src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/33079/_next/static/images/whitelogowithdotcom.png"
-          />
+        <a routerLink="/home"><img class="img-fluid"
+            src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/33079/_next/static/images/whitelogowithdotcom.png" />
         </a>
       </div>
     </nav>
