@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'ContactUs',component:ContactUsComponent},
   {path:'Region',component:RegionComponent},
   {path:'el-ta5sos',component:ElTa5sosComponent},
-  {path:"insurances",component:InsuranceComponent}
+  {path:"insurances",component:InsuranceComponent},
   {path:'Doctors',component:DoctorsComponent}
 ];
 
