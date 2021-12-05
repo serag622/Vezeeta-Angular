@@ -2,9 +2,7 @@ import { NgModule, Query } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AngularFireModule} from '@angular/fire/compat';
-import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
-import { NavBarComponent } from './Compontents/Layout/nav-bar/nav-bar.component'
+import { NavBarComponent } from './Compontents/Layout/nav-bar/nav-bar.component';
 import { FooterComponent } from './Compontents/Layout/footer/footer.component';
 import { LoginComponent } from './Compontents/Login/login.component';
 import { RegisterComponent } from './Compontents/Register/register.component';
@@ -21,17 +19,17 @@ import { BookingInformationComponent } from './Compontents/DoctorPage/booking-in
 import { SearchBarComponent } from './Compontents/Shared/search-bar/search-bar.component';
 import { RegionDetailsComponent } from './Compontents/region/Region-Details/region-details.component';
 import { ColumnDataComponent } from './Compontents/region/Column-Data/column-data.component';
-import { ContactUsComponent } from './Compontents/Contact-US/contact-us.component';
-import { environment } from 'src/environments/environment';
 import { InsuranceComponent } from './Compontents/insurance/insurance/insurance.component';
 import { InsuranceColumnDataComponent } from './Compontents/insurance/insurance-column-data/insurance-column-data.component';
-
-import {environment} from '../environments/environment';
 import { DoctorsComponent } from './Compontents/DoctorsPage/doctors/doctors.component';
 import { DoctorCardComponent } from './Compontents/DoctorsPage/doctor-card/doctor-card.component';
-
+import { environment } from 'src/environments/environment';
 import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
+
 
 
 @NgModule({
@@ -44,8 +42,8 @@ import {AngularFirestoreModule } from '@angular/fire/compat/firestore';
     ElTa5sosComponent,
     ContactUsComponent,
     RegionComponent,
-    RegionDetailsComponent,
     ColumnDataComponent,
+    RegionDetailsComponent,
     HomeComponent,
     HomeHeaderComponent,
     HeadingComponent,
@@ -58,15 +56,19 @@ import {AngularFirestoreModule } from '@angular/fire/compat/firestore';
     DoctorsComponent,
     DoctorCardComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule, // fir
+    AngularFireStorageModule,
+    AngularFireAuthModule
     AngularFirestoreModule,
   ],
+
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
+
 export class AppModule { }

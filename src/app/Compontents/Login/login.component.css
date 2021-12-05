@@ -42,13 +42,13 @@ body {
   box-sizing: border-box;
   height: auto;
   padding: 10px;
-  font-size: 10px;
+  font-size: 17px;
 }
 
 #logreg-forms .form-signin input[type="password"] {
   border-top-left-radius: 50;
   border-top-right-radius: 50;
-  font-size: 10px;
+  font-size: 17px;
 }
 
 #logreg-forms .social-login {
