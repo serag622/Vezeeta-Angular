@@ -7,7 +7,7 @@ import { FooterComponent } from './Compontents/Layout/footer/footer.component';
 import { LoginComponent } from './Compontents/Login/login.component';
 import { RegisterComponent } from './Compontents/Register/register.component';
 import { ElTa5sosComponent } from './Compontents/El-Ta5sos/el-ta5sos.component';
-import { ContactUsComponent } from './Compontents/Contact-US/contact-us.component';
+import { ContactUsComponent } from './Compontents/contact-us/contact-us.component';
 import { FormsModule } from '@angular/forms';
 import { RegionComponent } from './Compontents/Region/Region/region.component'
 import { RegionDetailsComponent } from './Compontents/Region/Region-Details/region-details.component';
@@ -19,6 +19,14 @@ import { DoctorProfileComponent } from './Compontents/DoctorPage/doctor-profile/
 import { DoctorInformationComponent } from './Compontents/DoctorPage/doctor-information/doctor-information.component';
 import { BookingInformationComponent } from './Compontents/DoctorPage/booking-information/booking-information.component';
 import { SearchBarComponent } from './Compontents/Shared/search-bar/search-bar.component';
+
+import {environment} from '../environments/environment';
+import { DoctorsComponent } from './Compontents/DoctorsPage/doctors/doctors.component';
+import { DoctorCardComponent } from './Compontents/DoctorsPage/doctor-card/doctor-card.component';
+
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 
 @NgModule({
   declarations: [
@@ -39,11 +47,15 @@ import { SearchBarComponent } from './Compontents/Shared/search-bar/search-bar.c
     DoctorInformationComponent,
     BookingInformationComponent,
     SearchBarComponent,
+    DoctorsComponent,
+    DoctorCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
