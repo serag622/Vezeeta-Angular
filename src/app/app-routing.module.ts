@@ -6,7 +6,7 @@ import { ElTa5sosComponent } from './Compontents/El-Ta5sos/el-ta5sos.component';
 import { HomeComponent } from './Compontents/HomePage/home/home.component';
 import { InsuranceComponent } from './Compontents/insurance/insurance/insurance.component';
 import { LoginComponent } from './Compontents/Login/login.component';
-import { RegionComponent } from './Compontents/region/Region/region.component';
+import { RegionComponent } from './Compontents/Region/Region/region.component';
 import { RegisterComponent } from './Compontents/Register/register.component';
 import { DoctorsComponent } from './Compontents/DoctorsPage/doctors/doctors.component';
 
@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'ContactUs',component:ContactUsComponent},
   {path:'Region',component:RegionComponent},
   {path:'el-ta5sos',component:ElTa5sosComponent},
-  {path:"insurances",component:InsuranceComponent}
+  {path:"insurances",component:InsuranceComponent},
   {path:'Doctors',component:DoctorsComponent}
 ];
 

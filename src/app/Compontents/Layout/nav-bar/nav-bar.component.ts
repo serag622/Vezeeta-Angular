@@ -14,8 +14,7 @@ export class NavBarComponent implements OnInit {
 
   isUser: boolean = false;
   // userDashbord !: User | any ;
-  constructor(private as: AuthService, private router: Router) { }
-  constructor(private languageService: LanguageService) { }
+  constructor(private languageService: LanguageService, private as: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.as.user.subscribe(user => {
@@ -32,15 +31,15 @@ export class NavBarComponent implements OnInit {
     this.as.logout().then(() => {
       this.router.navigate(['/Login'])
     })
-    
-  changeLanguage(lang: HTMLAnchorElement) {
-    let lan = lang.innerHTML;
-    if (lan === "English") {
-      this.languageService.langugeEvent.emit("ar")
-    }
-    else if (lan === "عربي") {
-      this.languageService.langugeEvent.emit("en");
-    }
-    console.log(lang.innerHTML);
   }
+    changeLanguage( lang: HTMLAnchorElement) {
+      let lan = lang.innerHTML;
+      if (lan === "English") {
+        this.languageService.langugeEvent.emit("ar")
+      }
+      else if (lan === "عربي") {
+        this.languageService.langugeEvent.emit("en");
+      }
+      console.log(lang.innerHTML);
+    }
 }
