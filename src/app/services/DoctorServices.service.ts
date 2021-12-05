@@ -1,20 +1,35 @@
-import { Doctor } from "../_Model/Doctor.model";
+import { Injectable } from "@angular/core";
+import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/compat/firestore";
+import { Observable } from "rxjs";
+import { Doctor } from "../model/Doctor.model";
+
+
+@Injectable({
+  providedIn: 'root'
+})
+
 
 export class DocdorService {
 
-  Doctors : Doctor[]=[{id: 1, name: "Ahmed Moahmed"}];
+  doctorCollection : AngularFirestoreCollection<Doctor>;
+  Doctors !: Observable<Doctor[]>;
+
+  constructor(private firestore:AngularFirestore){
+    this.doctorCollection = firestore.collection<Doctor>("Doctors");
+
+  }
 
   getAllDoctors(){
-    return this.Doctors
+  this.Doctors=this.doctorCollection.valueChanges({ idField: 'id' });
+  return this.Doctors
   }
 
-  getDoctorByID( id: number ){
-
+  getDoctorByID(id :string){
+   const doctor = this.doctorCollection.doc(id).valueChanges({ idField: 'id' })
+   return doctor;
   }
 
-  getDoctorBy( str : string ){
 
-  }
 
 
 }

@@ -1,0 +1,51 @@
+.b1::after {
+  transform: unset;
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: rgb(0, 112, 205) !important;
+  font-size: 17px;
+  font-family: icomoon !important;
+}
+
+.b1 {
+  border-top: 0;
+  color: rgb(0, 112, 205);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.paging {
+  display: flex;
+  margin: 1.5rem;
+  font-size: 1.4rem;
+  color: #0088CC;
+  font-weight: 400;
+}
+
+.paging__arrow {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: .8rem 1.2rem;
+}
+
+.paging__arrow:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.paging__arrow:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+.paging__number {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: .8rem 1.2rem;
+}
+
+.paging__number.active {
+  background-color: #0088CC;
+  color: white;
+}
