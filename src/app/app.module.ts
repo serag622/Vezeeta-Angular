@@ -17,6 +17,13 @@ import { DoctorProfileComponent } from './Compontents/DoctorPage/doctor-profile/
 import { DoctorInformationComponent } from './Compontents/DoctorPage/doctor-information/doctor-information.component';
 import { BookingInformationComponent } from './Compontents/DoctorPage/booking-information/booking-information.component';
 import { SearchBarComponent } from './Compontents/Shared/search-bar/search-bar.component';
+import { RegionDetailsComponent } from './Compontents/region/Region-Details/region-details.component';
+import { ColumnDataComponent } from './Compontents/region/Column-Data/column-data.component';
+import { InsuranceComponent } from './Compontents/insurance/insurance/insurance.component';
+import { InsuranceColumnDataComponent } from './Compontents/insurance/insurance-column-data/insurance-column-data.component';
+import {environment} from '../environments/environment';
+import { DoctorsComponent } from './Compontents/DoctorsPage/doctors/doctors.component';
+import { DoctorCardComponent } from './Compontents/DoctorsPage/doctor-card/doctor-card.component';
 import { RegionDetailsComponent } from './Compontents/Region/Region-Details/region-details.component';
 import { ColumnDataComponent } from './Compontents/Region/Column-Data/column-data.component';
 import { InsuranceComponent } from './Compontents/insurance/insurance/insurance.component';
@@ -28,9 +35,6 @@ import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-
-
-
 
 @NgModule({
   declarations: [
