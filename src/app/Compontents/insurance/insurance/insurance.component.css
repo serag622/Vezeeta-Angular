@@ -1,0 +1,37 @@
+.middle {
+    background-color: rgb(226, 230, 234);
+}
+.search {
+    border-radius: 10px;
+}
+
+.search:read-write {
+    box-shadow: 1px 1px rgb(165, 164, 164);
+}
+
+.t1 {
+    color: rgb(0, 112, 205);
+}
+
+.v {
+    text-decoration: none;
+}
+
+.v:hover {
+    text-decoration: underline;
+}
+.col-data a{
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+}
+
+.col-data a:hover{
+    color: rgb(0, 112, 205);
+    text-decoration: underline;
+
+}
+
+.doc {
+    border-radius: 10px;
+}

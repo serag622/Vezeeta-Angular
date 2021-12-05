@@ -1,0 +1,260 @@
+<app-heading></app-heading>
+
+<section class="container-fluid py-4" style="background-color: rgb(226,230,234);">
+  <section class="container">
+    <div class="row">
+
+      <div class="col-lg-3 px-4">
+        <div class="d-flex">
+          <a style="text-decoration: none" routerLink=""><span> فيزيتا </span></a>
+          <p><span> / كل الدكاترة فى مصر </span></p>
+        </div>
+        <div class="card sticky-top w-100 fixed-top overflow-hidden" style="border-radius: 15px">
+          <h5 class="bcolor text-center text-light p-2 w-100 m-0 fw-bolder">حدد بحثك</h5>
+
+          <div class="accordion " id="accordionExample">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button d-inline collapsed b1 text-end " type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-1" aria-expanded="true" aria-controls="flush-1">
+                  <span class="text_3 fw-bold"><i class="fal fa-graduation-cap"></i> اللقب </span>
+                </button>
+              </h2>
+              <div id="flush-1" class="accordion-collapse collapse  " aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff"> استاذ</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">مدرس</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">استشاري</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">اخصائى</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button d-inline collapsed b1 text-end" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-2" aria-expanded="false" aria-controls="flush-2">
+                <span class="text_3 fw-bold">  <i class="far fa-venus-mars"></i>  النوع</span>
+                </button>
+              </h2>
+              <div id="flush-2" class="accordion-collapse collapse" aria-labelledby="headingTow"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">دكتورة</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">دكتور</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button d-inline collapsed b1 text-end" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-3" aria-expanded="false" aria-controls="flush-3">
+                  <span class="text_3 fw-bold">   <i class="fad fa-calendar-day"></i>   المواعيد</span>
+                </button>
+              </h2>
+              <div id="flush-3" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">اي يوم</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">اليوم</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">غدا</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button d-inline collapsed b1 text-end" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-4" aria-expanded="false" aria-controls="flush-4">
+                  <span class="text_3 fw-bold">   <i class="fas fa-tags"></i>  اكواد الخصم</span>
+                </button>
+              </h2>
+              <div id="flush-4" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff"> يقبل اكواد الخصم </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button d-inline collapsed b1 text-end" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-5" aria-expanded="false" aria-controls="flush-5">
+                  <span class="text_3 fw-bold">   <i class="fad fa-money-bill-wave"></i>  سعر الكشف</span>
+                </button>
+              </h2>
+              <div id="flush-5" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">الكل</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">اقل من 50</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">من 50حتي100</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">من 100 حتي200</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">من 200 ل300</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">كثر من 300</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button d-inline collapsed b1 text-end" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-6" aria-expanded="false" aria-controls="flush-6">
+                  <span class="text_3 fw-bold"> <i class="fad fa-stethoscope"></i>   المنشأة</span>
+                </button>
+              </h2>
+              <div id="flush-6" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">مستشفي</li>
+                    <li><input type="checkbox" class="input-controls ms-2" value="proff">عيادة</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9 pt-5">
+        <div class="d-flex">
+          <h4 class="text_1 fw-bold">كل التخصصات</h4>
+          <p class="text_2 mx-2 mt-1 fw-bold">4427 دكتور</p>
+        </div>
+        <div class="row row-cols-1">
+
+        <app-doctor-card *ngFor='let d of DoctorsViewed; let i =index' [Doctor]='d' ></app-doctor-card>
+
+        </div>
+      </div>
+    </div>
+
+    <div class=" d-flex justify-content-center">
+      <div class="paging px-auto">
+        <!-- left arrow -->
+        <div class="paging__arrow border border-1 border-secondary" (click)="onPagenation(currentPage -1)">
+          <i class="fas fa-angle-right"></i>
+      </div>
+
+        <!-- page number -->
+        <div class="paging__number mx-2 border border-1 border-secondary "  *ngFor ="let page of noOpages , let i = index" [ngClass]="{'active': currentPage == i }" (click)="onPagenation(i)">{{page}}</div>
+
+        <!-- right arrow -->
+        <div class="paging__arrow border border-1 border-secondary" (click)="onPagenation(currentPage +1)">
+          <i class="fas fa-angle-left"></i>
+      </div>
+    </div>
+  </div>
+  </section>
+</section>
+
+
+<section class="container-fluid my-5">
+  <section class="container">
+    <div class="card ">
+
+      <h5 class="card-title text-light bcolor py-3 px-4">أسئلة مكررة</h5>
+
+      <div class="accordion-item text_1 fw-bold">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button b1 d-inline text-end px-5 bg-secondary bg-opacity-25 rounded-3 my-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+           <span class='text_1 fw-bold'> ازاى احجز موعد في نفس اليوم مع دكتور؟</span>
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>تستطيع أن تدخل على موقع أو تطبيق فيزيتا وتبحث عن دكاترة في منطقتك، اختار 'اليوم' من المواعيد
+              المتاحة في محدد البحث اعلى الصفحة واحجز في أقل من دقيقة.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item text_1 fw-bold">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed b1 d-inline text-end px-5 bg-secondary bg-opacity-25 rounded-3 my-1" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <span class='text_1 fw-bold'>  ازاى اقدر ابحث عن دكتور تابع للتأمين الخاص بي ؟</span>
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>فيزيتا توفر لك فرصة البحث عن دكاترة يقبلون التامين الخاص بك على وجه التحديد. اختار شركه التامين
+              الخاصة بك من محدد البحث اعلى الصفحة واحجز في أقل من دقيقة.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item text_1 fw-bold">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed b1 d-inline text-end px-5 bg-secondary bg-opacity-25 rounded-3 my-1" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <span class='text_1 fw-bold'>  ازاي اقدر احجز موعد من علي الانترنت مع دكتور؟</span>
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>فيزيتا هي خدمه مجانيه على الانترنت، تساعد المرضى في ايجاد دكاترة أو أي تخصص آخر وحجز ميعاد فورا.
+              ثم عند اختيار الموعد المطلوب والمنطقة يمكنك اختيار شركة التامين الخاصة بك اذا توفر لديك. وبناءا
+              على المعلومات التي ادخلتها، ستظهر لك قائمه بكل الدكاترة الذين يطابقون معايير البحث، بالاضافة
+              لقائمة مواعيدهم المتاحة.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item text_1 fw-bold">
+        <h2 class="accordion-header" id="headingfour">
+          <button class="accordion-button collapsed b1 d-inline text-end px-5 bg-secondary bg-opacity-25 rounded-3 my-1" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+            <span class='text_1 fw-bold'>هل اقدر اختار دكتور حسب الجنس ذكؤ او انثى ؟</span>
+          </button>
+        </h2>
+        <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>عند البحث عن دكاترة على فيزيتا، تستطيع تحديد نتائج البحث الخاصة بك حسب الجنس، بالاضافة لمعايير
+              بحث اخرى. وبهذه الطريقة، سيتم عرض الدكاترة الذين يطابقون تفضيلاتك فقط.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item text_1 fw-bold">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed b1 d-inline text-end px-5 bg-secondary bg-opacity-25 rounded-3 my-1" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+            <span class='text_1 fw-bold'>  هل اقدر ابحث عن مواعيد في نفس اليوم لدكتور ؟</span>
+          </button>
+        </h2>
+        <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>تستطيع استخدام بحث فيزيتا للعثور على دكاترة حسب الاعلى تصنيفا من خلال تقييمات المرضى السابقين
+              الذين قاموا باتمام الزيارة حيث ان في كل مرة يكمل فيها المريض موعد محجوز من على فيزيتا، تتم دعوته
+              لمراجعه وتقييم تجربته وابداء رأيه في الزيارة.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</section>
+</section>

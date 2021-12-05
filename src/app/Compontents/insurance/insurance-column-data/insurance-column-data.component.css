@@ -1,0 +1,16 @@
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+}
+
+ a:hover{
+    color: rgb(0, 112, 205);
+    text-decoration: underline;
+
+}
+

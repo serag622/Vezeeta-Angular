@@ -9,26 +9,35 @@ import { regionService } from 'src/app/services/region-service.service';
   styleUrls: ['./column-data.component.css']
 })
 export class ColumnDataComponent implements OnChanges {
-  regionList: Region[]=[]
-  regionDetailsList: RegionDetails[] = [];
-  regionDetailsToBeViewed: RegionDetails[] = [];
+  regionList: Region[] | any = []
+  regionDetailsList: RegionDetails[] | any = [];
+  regionDetailsToBeViewed: RegionDetails[] | any = [];
   @Input() colNum!: number;
   @Input() index!: number;
   constructor(private regionService: regionService) {
-    this.regionList = this.regionService.getAllRegions();
-    this.regionService.searchEvent.subscribe((next) => {
-      this.filterData(next);
-    })
-    
-
   }
+  getAll() {
+    this.regionService.getAllRegions().subscribe(res => {
+      this.regionList = res;
+      //  console.log(this.regionList[0].regions);
+      // this.regionDetailsToBeViewed=this.regionList.slice();
+      this.searchEvent();
+      if (this.index >= 0) {
+        this.regionDetailsList = this.regionList[this.index].regions
+        this.sliceArray(this.regionDetailsList);
+      }
+    })
+  }
+  searchEvent() {
+    this.regionService.searchEvent.subscribe((next) => {
+      //   this.filterData(next);
+      // this.filteration(next)
+    })
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
-    // throw new Error('Method not implemented.');
-   console.log(this.index)
-   if(this.index>=0){
-   this.regionDetailsList = this.regionList[this.index].regionDetails
-   this.sliceArray(this.regionDetailsList);
-   }
+    this.getAll()
+
   }
 
   sliceArray(regionArr: RegionDetails[]) {
@@ -41,7 +50,7 @@ export class ColumnDataComponent implements OnChanges {
   filterData(txt: String) {
     let filterArr: RegionDetails[] = [];
     if (txt == "") {
-      this.sliceArray(this.regionDetailsList);
+      //  this.sliceArray(this.regionDetailsList);
     }
     else {
       for (var i = 0; i < this.regionDetailsList.length; i++) {
@@ -49,13 +58,14 @@ export class ColumnDataComponent implements OnChanges {
           filterArr.push(this.regionDetailsList[i]);
         }
       }
-      this.sliceArray(filterArr);
+      //  this.sliceArray(filterArr);
       //   console.log(filterArr)
     }
   }
   ngOnInit(): void {
-    this.regionList = this.regionService.getAllRegions();
-    this.sliceArray(this.regionDetailsList)
+    this.getAll();
+    //console.log(this.regionList)
+    //  this.sliceArray(this.regionDetailsList)
   }
 
 

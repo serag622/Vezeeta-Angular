@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Doctor } from 'src/app/model/Doctor.model';
 
 @Component({
   selector: 'app-doctor-information',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorInformationComponent implements OnInit {
 
+  @Input() doctor !:Doctor | any;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.doctor.category)
   }
 
 }

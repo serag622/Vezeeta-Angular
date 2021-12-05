@@ -1,19 +1,18 @@
 <div class="row g-3">
   <div
     class="card col-xl-12 col-sm-12 d-flex"
-    style="border-radius: 10px 10px 10px 10px"
-  >
+    style="border-radius: 10px 10px 10px 10px">
     <div class="d-flex p-3 w-100">
       <div class="ms-3 w-25">
-        <img class="img-circle img-fluid" src="/assets/img/2.png" alt="" />
+        <img class="rounded-circle img-fluid" src={{doctor.imgDoctor}} alt="" />
       </div>
       <div class="w-75">
         <div class="d-flex justify-content-between">
-          <h4 class="text-secondary">دكتور حسام عمارة</h4>
+          <h4 class="text-secondary">دكتور {{doctor.name}}</h4>
           <h1 class="text-secondary fw-bolder fs-5">٦٣,٥١٣ مشاهدة</h1>
         </div>
         <p class="text-secondary fw-bolder fs-5">
-          استشاري أمراض النفسية و العصبية و علاج الأدمان
+          {{doctor.category.name}}{{doctor.category.subCategory}}
         </p>
       </div>
     </div>
@@ -32,8 +31,7 @@
         <i class="bi bi-star-fill"></i>
         <i class="bi bi-star"></i>
       </span>
-      <span class="text-secondary fw-bolder ps-3"
-        >التقييم العام من ٢٢٢ زاروا الدكتور</span
+      <span class="text-secondary fw-bolder ps-3">التقييم العام من ٢٢٢ زاروا الدكتور</span
       >
     </div>
   </div>
@@ -48,10 +46,7 @@
         <span class="fw-bolder">معلومات عن الدكتور</span>
         <br />
         <span class="text-secondary fw-bolder">
-          خريج طب عين شمس 2002 ، وحاصل على ماجستير الأمراض النفسيه والعصبيه من
-          طب عين شمس .. ومسجل للزماله المصريه للطب النفسي ومتخصص في علاج كافة
-          الإضطرابات النفسيه للبالغين والأطفال وعلاج كافة أنواع الإدمان وكذلك
-          عياده متميزة للإستشارات الزوجيه والأسرية .
+         {{doctor.information}}
         </span>
       </div>
     </div>
@@ -68,33 +63,10 @@
         <br />
         <div>
           <img
-            src="https://cdn-dr-images.vezeeta.com/Assets/Images/SelfServiceDoctors/ENT5f653d/Facilities/clinic-change-me-clinic-psychiatry_20190423181944551.heic"
-            alt=""
-            width="18%"
-            height="10%"
-            class="ps-1"
-          />
-          <img
-            src="https://cdn-dr-images.vezeeta.com/Assets/Images/SelfServiceDoctors/ENT5f653d/Facilities/clinic-change-me-clinic-psychiatry_20190423182026537.heic"
-            alt=""
-            width="18%"
-            height="10%"
-            class="ps-1"
-          />
-          <img
-            src="https://cdn-dr-images.vezeeta.com/Assets/Images/SelfServiceDoctors/ENT5f653d/Facilities/clinic-change-me-clinic-psychiatry_20190423182638909.heic"
-            alt=""
-            width="18%"
-            height="10%"
-            class="ps-1"
-          />
-          <img
-            src="https://cdn-dr-images.vezeeta.com/Assets/Images/SelfServiceDoctors/ENT5f653d/Facilities/clinic-change-me-clinic-psychiatry_20190423182026537.heic"
-            alt=""
-            width="18%"
-            height="10%"
-            class="ps-1"
-          />
+            src={{doctor.imgsClinic[i]}}
+            alt="" width="18%" height="10%" class="ps-1" *ngFor="let img of doctor.imgsClinic; let i=index" />
+
+
         </div>
       </div>
     </div>
