@@ -2,9 +2,24 @@ import { Category } from "./Category.model";
 import { City } from "./City.model";
 
 export interface Doctor{
-  id?: number;
+  id?:string
   name?: string;
-  city?: City;
-  category?: Category;
-  img?: string;
+  degree?:string;
+  location?: location;
+  category?: category;
+  imgDoctor?: string;
+  price?: number;
+  waiting?: number;
+  mobile?: number;
+  imgsClinic?:string[]
+}
+
+interface category{
+  name?: string;
+  subCategory?: string;
+}
+
+interface location{
+  city?: string;
+  region?:string;
 }
