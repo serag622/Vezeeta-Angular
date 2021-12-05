@@ -1,0 +1,6 @@
+<div>
+    <li class="row" *ngFor="let insurance of insuranceArrToBeViewed,let i=index">
+        <a href="#" class="mx-3 mb-3 mt-3" id="item1" *ngFor="let item of insurance.insurances"> {{item.namear}}</a>
+        <!-- <a href="#" class="mx-3" id="item1">{{insurance.insurances[0].namear}}</a> -->
+    </li>
+</div>
