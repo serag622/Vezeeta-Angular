@@ -19,7 +19,13 @@ import { DoctorProfileComponent } from './Compontents/DoctorPage/doctor-profile/
 import { DoctorInformationComponent } from './Compontents/DoctorPage/doctor-information/doctor-information.component';
 import { BookingInformationComponent } from './Compontents/DoctorPage/booking-information/booking-information.component';
 import { SearchBarComponent } from './Compontents/Shared/search-bar/search-bar.component';
-
+import { SearchpageComponent } from './Compontents/searchpage/searchpage.component';
+import { BookingpageComponent } from './Compontents/bookingpage/bookingpage.component';
+// 1. Import the libs you need
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +45,8 @@ import { SearchBarComponent } from './Compontents/Shared/search-bar/search-bar.c
     DoctorInformationComponent,
     BookingInformationComponent,
     SearchBarComponent,
+    SearchpageComponent,
+    BookingpageComponent,
   ],
   imports: [
     BrowserModule,
