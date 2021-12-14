@@ -36,8 +36,9 @@ export class BookingInformationComponent implements OnInit,OnDestroy {
    }
 
   ngOnDestroy(): void {
-
+    if(this.isUser){
     this.userSubscription.unsubscribe()
+    }
   }
 
   ngOnInit(): void {

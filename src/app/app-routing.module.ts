@@ -10,6 +10,7 @@ import { RegionComponent } from './Compontents/Region/Region/region.component';
 import { RegisterComponent } from './Compontents/Register/register.component';
 import { DoctorsComponent } from './Compontents/DoctorsPage/doctors/doctors.component';
 import { ReservationComponent } from './Compontents/reservation/reservation.component';
+import { AllReservationComponent } from './Compontents/all-reservation/all-reservation.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:"insurances",component:InsuranceComponent},
   {path:'Doctors',component:DoctorsComponent},
   {path:'Reservation/:id',component:ReservationComponent},
+  {path:'AllReservations/:user',component:AllReservationComponent},
 ];
 
 @NgModule({

@@ -85,10 +85,10 @@
              <div *ngIf='!isUser'>
               <div class='text-center'>
                   <p class='fw-bold text_1 fs-4'>Please Login first to book appointment </p>
-                  <a class='btn btn-success w-50 py-3' href='/Login'>Sign in</a>
+                  <a class='btn btn-success w-50 py-3' routerLink='/Login' (click)="modal.close('Save click')" >Sign in</a>
                   <hr>
                   <p class='fw-bold text_1 fs-5'>If you don't have account'</p>
-                  <a class='btn btn-danger w-50 py-3' href='/Register'>Register</a>
+                  <a class='btn btn-danger w-50 py-3' routerLink='/Register' (click)="modal.close('Save click')" >Register</a>
              </div>
              </div>
 

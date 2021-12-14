@@ -30,6 +30,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReservationComponent } from './Compontents/reservation/reservation.component';
+import { AllReservationComponent } from './Compontents/all-reservation/all-reservation.component';
 
 
 
@@ -58,6 +59,7 @@ import { ReservationComponent } from './Compontents/reservation/reservation.comp
     DoctorsComponent,
     DoctorCardComponent,
     ReservationComponent,
+    AllReservationComponent,
   ],
 
   imports: [

@@ -48,7 +48,7 @@
               <div ngbDropdown class=" " *ngIf="isUser">
                 <a class="nav-link btn border-1 border-light px-2 me-1 text-light" id="dropdownBasic1" ngbDropdownToggle>{{User?.name}}</a>
                 <div ngbDropdownMenu class="text-danger" aria-labelledby="dropdownBasic1">
-                  <a ngbDropdownItem class=''>مواعيدي</a>
+                  <a ngbDropdownItem routerLink="/AllReservations/{{User?.name}}" >مواعيدي</a>
                   <a ngbDropdownItem class='' (click)="logout()" >  تسجيل الخروج </a>
                 </div>
               </div>

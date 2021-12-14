@@ -38,7 +38,10 @@ export class ReservationService {
 
   deleteReservationoById(id:string){
     return this.firebase.collection('Reservation').doc(id).update({isCancelled : true})
+  }
 
+  GetAllReservationsofUser(name:string){
+    return this.firebase.collection('Reservation',ref=>ref.where('userName','==',name)).valueChanges({ idField: 'id' })
   }
 
 

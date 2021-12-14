@@ -30,7 +30,7 @@
             <hr>
 
             <div class="d-flex  justify-content-between py-2">
-              <button class="btn bcolor text-light fs-5 w-50" type="button">مواعيدي</button>
+              <a class="btn bcolor text-light fs-5 w-50" type="button" routerLink="/AllReservations/{{Reservation?.userName}}" >مواعيدي</a>
               <button class="btn btn-outline-secondary w-25 " type="button" (click)="deleteReservation()"  >إلغاء الحجز</button>
             </div>
           </div>

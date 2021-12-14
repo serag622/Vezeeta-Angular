@@ -40,10 +40,12 @@ export class NavBarComponent implements OnInit {
       if(this.isUser){
         this.userSubscription = this.us.getUser(user.uid).subscribe(result => {
            this.User = result;
+           console.log(this.userSubscription);
          })
       }
-      else {
+      else if(!this.isUser && this.userSubscription){
          this.userSubscription.unsubscribe()
+         console.log(this.userSubscription.closed)
       }
     })
 

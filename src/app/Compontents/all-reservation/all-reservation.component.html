@@ -1,0 +1,30 @@
+<app-heading></app-heading>
+
+<section class="container-fluid bg-light">
+  <section class="container py-5">
+
+<table class="table table-striped py-5 text_3 fs-5">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">اسم الدكتور</th>
+    <th scope="col">أين</th>
+    <th scope="col">موعد الحجز </th>
+    <th scope="col">تفاصيل</th>
+  </tr>
+  </thead>
+  <tbody class="text_3">
+  <tr *ngFor="let reservation of Reservations; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>
+      {{ reservation?.doctorName }}
+    </td>
+    <td>{{ reservation?.doctorLocation.city}} - {{reservation?.doctorLocation.region}}</td>
+    <td>{{reservation?.bookDate}} - {{reservation?.bookhour}} : 00 </td>
+    <td *ngIf='!reservation?.isCancelled'> سعر الكشف {{reservation?.price}} <br> تيليفون العيادة {{reservation?.doctorPhone}}</td>
+    <td *ngIf='reservation?.isCancelled'> تم إلغاء الموعد  </td>
+  </tr>
+  </tbody>
+</table>
+  </section>
+</section>
