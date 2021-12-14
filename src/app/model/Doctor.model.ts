@@ -11,7 +11,9 @@ export interface Doctor{
   price?: number;
   waiting?: number;
   mobile?: number;
-  imgsClinic?:string[]
+  imgsClinic?:string[],
+  clinicTime :clinicTime
+
 }
 
 interface category{
@@ -19,7 +21,12 @@ interface category{
   subCategory?: string;
 }
 
-interface location{
+export interface location{
   city?: string;
   region?:string;
+}
+
+interface clinicTime{
+  start: number;
+  end: number;
 }

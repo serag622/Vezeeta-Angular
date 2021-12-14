@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
     .then(result => {
       this.errorMessage = ''
       this.us.addNewUser(result.user?.uid , data.name , data.password , data.email , data.phone)
+      localStorage.setItem('User',JSON.stringify(result.user))
       }).then(() => {
         this.router.navigate(['/'])
     })

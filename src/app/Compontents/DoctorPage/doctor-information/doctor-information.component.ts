@@ -9,10 +9,11 @@ import { Doctor } from 'src/app/model/Doctor.model';
 export class DoctorInformationComponent implements OnInit {
 
   @Input() doctor !:Doctor | any;
+  techSpecMeta !: { make: string; };
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.doctor.category)
+    this.techSpecMeta= {make: ""};
   }
 
 }

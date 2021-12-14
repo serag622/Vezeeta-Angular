@@ -28,6 +28,8 @@ import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReservationComponent } from './Compontents/reservation/reservation.component';
 
 
 
@@ -55,6 +57,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     InsuranceColumnDataComponent,
     DoctorsComponent,
     DoctorCardComponent,
+    ReservationComponent,
   ],
 
   imports: [
@@ -65,6 +68,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     AngularFireStorageModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgbModule,
   ],
 
   providers: [],

@@ -9,6 +9,7 @@ import { LoginComponent } from './Compontents/Login/login.component';
 import { RegionComponent } from './Compontents/Region/Region/region.component';
 import { RegisterComponent } from './Compontents/Register/register.component';
 import { DoctorsComponent } from './Compontents/DoctorsPage/doctors/doctors.component';
+import { ReservationComponent } from './Compontents/reservation/reservation.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'Region',component:RegionComponent},
   {path:'el-ta5sos',component:ElTa5sosComponent},
   {path:"insurances",component:InsuranceComponent},
-  {path:'Doctors',component:DoctorsComponent}
+  {path:'Doctors',component:DoctorsComponent},
+  {path:'Reservation/:id',component:ReservationComponent},
 ];
 
 @NgModule({

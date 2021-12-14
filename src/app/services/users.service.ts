@@ -16,4 +16,12 @@ export class UsersService {
       phone
     })
   }
+
+  getUser(id :string){
+  return( this.fs.collection('users').doc(id).valueChanges({ idField:'id'}))
+
+  }
+
+
+
 }

@@ -10,21 +10,30 @@ import { DocdorService } from 'src/app/services/DoctorServices.service';
   styleUrls: ['./doctor-profile.component.css']
 })
 export class DoctorProfileComponent implements OnInit,OnDestroy {
-  Doctor !: Doctor | any;
+
+  Doctor :Doctor | any
   DocObserable !: Subscription;
+
+  date : Date=new Date();
+  techSpecMeta!: { make: string; };
 
 
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute , private ds : DocdorService) { }
 
+
   ngOnInit(): void {
+
+    this.techSpecMeta= {make: ""};
+
     const Doctorid = this.activatedRoute.snapshot.params.id;
 
-    console.log(Doctorid)
-    this.DocObserable = this.ds.getDoctorByID(Doctorid).subscribe(Doctor => {
-      this.Doctor =Doctor;
-      console.log(Doctor)
+    this.DocObserable = this.ds.getDoctorByID(Doctorid).subscribe(doctor => {
+      this.Doctor =doctor;
     })
+
+    // this.date.setDate(this.date.getDay()+2)
+
 
   }
 

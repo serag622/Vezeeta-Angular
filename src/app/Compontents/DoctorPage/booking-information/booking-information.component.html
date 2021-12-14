@@ -12,35 +12,138 @@
     </div>
     <hr />
     <div class="row justify-content-center">
-      <div
-        class="col-6"
-        style="display: flex; text-align: center; flex-direction: column"
-      >
+      <div class="col-6" style="display: flex; text-align: center; flex-direction: column">
         <i class="bi bi-cash text-primary" style="font-size: 25px"></i>
-        <h6 class="text-secondary fw-bolder">الكشف {{doctor.price}} جنيه</h6>
+        <h6 class="text-secondary fw-bolder">الكشف {{doctor?.price}} جنيه</h6>
       </div>
-      <div
-        class="col-6"
-        style="display: flex; text-align: center; flex-direction: column"
-      >
+      <div class="col-6" style="display: flex; text-align: center; flex-direction: column">
         <i class="bi bi-circle-half text-primary" style="font-size: 25px"></i>
-        <h6 class="text-primary fw-bolder">مدة الانتظار : {{doctor.waiting}} دقيقة</h6>
+        <h6 class="text-primary fw-bolder">مدة الانتظار : {{doctor?.waiting}} دقيقة</h6>
       </div>
     </div>
     <hr />
-    <i class="bi bi-geo-alt text-primary ms-2" style="font-size: 20px"></i>
-    <div style="margin-right: 10%; margin-top: -7%">
-      <span class="fw-bolder">{{doctor.location.city}} : {{doctor.location.region}}</span>
+    <div style="margin-right: 10%; ">
+      <i class="bi bi-geo-alt text-primary ms-2" style="font-size: 20px"></i>
+      <span class="fw-bolder">{{doctor?.location.city}} : {{doctor?.location.region}}</span>
       <br />
       <span class="text-secondary fw-bolder">
         احجز الان وسيتم ارسال تفاصيل العنوان بالكامل ورقم العيادة
       </span>
     </div>
-    <hr />
+
+    <hr/>
+    <div class="row row-cols-3 g-2 mb-5 px-3">
+
+      <div class="col bookcard" *ngFor="let d of dates; let i=index">
+        <div class=" card bookcard">
+          <div class="card-header  bcolor text-center text-light">{{d.day}}</div>
+          <div class="card-body text_3 text-center">
+              <p> من{{doctor?.clinicTime.start}}:00 م </p>
+              <p> حتى{{doctor?.clinicTime.end}}:00 م</p>
+          </div>
+          <div type="button" class="card-footer bg-danger text-center text-light" (click)="open(content,d)">احجز</div>
+
+          <!-- modal -->
+          <ng-template #content let-modal>
+            <div class="modal-header bcolor text-center">
+              <h4 class="modal-title fw-bolder  text-light mx-auto " id="modal-basic-title">معلومات عن الحجز</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div *ngIf="isUser">
+                 <h5 class="text-center text_1 fw-bold">بيــــانـــات الــحــجــز</h5>
+                 <h5 class="text-center text_1 fw-bold">{{d.day}} <span *ngIf="canBook"> in {{d.bookhour}} pm </span> </h5>
+                 <hr/>
+                 <div>
+
+                  <div class="row justify-content-center">
+                    <div class="col-6" style="display: flex; text-align: center; flex-direction: column">
+                      <i class="bi bi-cash text_3" style="font-size: 25px"></i>
+                      <h6 class="text-secondary fw-bolder">الكشف {{doctor?.price}} جنيه</h6>
+                    </div>
+                    <div class="col-6" style="display: flex; text-align: center; flex-direction: column">
+                      <i class="bi bi-circle-half text_3" style="font-size: 25px"></i>
+                      <h6 class="text_3 fw-bolder">مدة الانتظار : {{doctor?.waiting}} دقيقة</h6>
+                    </div>
+                  </div>
+                  <hr>
+                  <h6 class="fw-bolder text_3 text-center fs-5"> <i class="far fa-map-marker-alt"></i> {{doctor?.location.city}} - {{doctor?.location.region}}</h6>
+
+                 </div>
+                 <hr>
+                 <p class='fw-bold text_3 fs-5 px-5'><i class="fas fa-user-injured"></i> / {{User?.name}}</p>
+                 <hr>
+                 <div class='d-flex justify-content-between px-5'>
+                   <p class='fw-bold text_3 fs-5'><i class="fas fa-user-injured"></i> / {{User?.phone}}</p>
+                   <p class='fw-bold text_3 fs-5 '><i class="far fa-envelope"></i> / {{User?.email}}</p>
+                 </div>
+             </div>
+
+             <div *ngIf='!isUser'>
+              <div class='text-center'>
+                  <p class='fw-bold text_1 fs-4'>Please Login first to book appointment </p>
+                  <a class='btn btn-success w-50 py-3' href='/Login'>Sign in</a>
+                  <hr>
+                  <p class='fw-bold text_1 fs-5'>If you don't have account'</p>
+                  <a class='btn btn-danger w-50 py-3' href='/Register'>Register</a>
+             </div>
+             </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button *ngIf="isUser && canBook"  type='button' class="btn btn-danger w-50" (click)="book(d)">تأكيد الحجز</button>
+              <p *ngIf=" isUser && !canBook" class='btn btn-secondary w-50 ' href>لا يوجد حجز</p>
+              <button type="button" class="btn btn-outline-secondary w-25" (click)="modal.close('Save click')">إلغاء</button>
+            </div>
+          </ng-template>
+       <!-- end of model -->
+
+        </div>
+      </div>
+
+      <!-- <div class="col bookcard">
+        <div class=" card bookcard">
+          <div class="card-header  bcolor text-center text-light">غدا</div>
+          <div class="card-body text_3 text-center">
+              <p> من8:00 م </p>
+              <p> حتى10:00 م</p>
+          </div>
+          <div type='button' class="card-footer bg-danger text-center text-light" (click)="open(content)" >احجز</div>
+        </div>
+      </div>
+
+      <div class="col bookcard">
+        <div class=" card bookcard">
+          <div class="card-header  bcolor text-center text-light">بعد غد</div>
+          <div class="card-body text_3 text-center">
+              <p> من8:00 م </p>
+              <p> حتى10:00 م</p>
+          </div>
+          <div type="button" class="card-footer bg-danger text-center text-light" (click)="open(content)">احجز</div>
+        </div>
+      </div> -->
+
+      <!-- llll -->
+    </div>
+    <p class='text-center text_2 fw-bold opacity-75'>الحجز مسبقا والدخول باسبقية الحضور</p>
+
+
+    <!-- Modal -->
+
+
+
+    <!-- end of model -->
+
+
+    <!-- <hr />
     <i class="bi bi-telephone text-primary ms-2" style="font-size: 20px"></i>
     <div style="margin-right: 10%; margin-top: -7%">
       <span class="fw-bolder">رقم الهاتف :</span>
       <span class="fw-bolder text-primary">{{doctor.mobile}}</span>
-    </div>
+    </div> -->
+
   </div>
 </div>

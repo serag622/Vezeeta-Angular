@@ -17,11 +17,11 @@ export class LoginComponent implements OnInit {
 
   login(form: any) {
     let data = form.value;
-    this.as
-      .login(data.email, data.password)
+    this.as.login(data.email, data.password)
       .then(result => {
         this.errorMessage = ''
         console.log(result)
+        localStorage.setItem('User', JSON.stringify(result.user));
       })
       .then(() => {
         this.router.navigate(['/']);
