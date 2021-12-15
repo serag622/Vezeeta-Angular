@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Insurance } from 'src/app/model/Insurance.mpdel';
 import { InsuranceService } from 'src/app/services/insurance-service.service';
 @Component({

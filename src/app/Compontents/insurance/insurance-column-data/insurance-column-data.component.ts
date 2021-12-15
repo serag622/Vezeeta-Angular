@@ -1,38 +1,41 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Insurance } from 'src/app/model/Insurance.mpdel';
 import { InsuranceService } from 'src/app/services/insurance-service.service';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-insurance-column-data',
   templateUrl: './insurance-column-data.component.html',
   styleUrls: ['./insurance-column-data.component.css']
 })
-export class InsuranceColumnDataComponent implements OnChanges {
+export class InsuranceColumnDataComponent implements OnChanges,OnInit {
   @Input() column!: number;
   insuranceArr!: Insurance[] | any;
   insuranceArrToBeViewed!: Insurance[]|any;
-  constructor(private insuranceService: InsuranceService) {
+  langFlag!:boolean;
+  constructor(private insuranceService: InsuranceService,private lang:LanguageService) {
     // console.log(this.getAllInsurance());
-    this.insuranceArr = this.insuranceService.getAllInsurance();
+   // this.insuranceArr = this.insuranceService.getAllInsurance();
+    this.lang.langugeEvent.subscribe(res=>{
+      this.langFlag=res;
+     // console.log(this.langFlag)
+    })
   }
 
   ngOnInit(): void {
-    //this.getAllInsurances();
-    // this.insuranceArr = 
     this.insuranceService.getAllInsurance().subscribe(res => {
       this.insuranceArr = res;
       this.sliceArr(this.insuranceArr);
     });
   }
 
-
-
   ngOnChanges() {
     if (this.column >= 0) {
+     // console.log(this.column)
       this.insuranceService.getAllInsurance().subscribe(res=>{
         this.insuranceArr=res;
         this.sliceArr(this.insuranceArr);
-        console.log(this.insuranceArr)
+      //  console.log(this.insuranceArr)
       }); 
     }
     

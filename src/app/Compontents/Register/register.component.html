@@ -1,97 +1,123 @@
 <section class="container-fluid">
   <div id="logreg-forms">
-    <div class="bg-primary text-center text-light p-1" style="border-radius: 15px 15px 0px 0px ; width:100%;">
+    <div class="bg-primary text-center text-light p-1" style="border-radius: 15px 15px 0px 0px; width: 100%">
       <span>
-        <h5 class=" mb-2 font-weight-normal fw-bolder ">انــضم الان</h5>
+        <h5 class="mb-2 font-weight-normal fw-bolder">{{'sign_up.sign_up'|translate}}</h5>
       </span>
     </div>
 
-    <form class="form-signin text-end p-4">
-
-      <div class="social-login row g-3 justify-content-center ">
+    <form class="form-signin text-end p-4" #f="ngForm" (ngSubmit)="signup(f)">
+      <div class="social-login row g-3 justify-content-center">
         <div class="col-sm-6 col-12">
-          <button class=" btn facebook-btn social-btn w-100" type="button"><span><i class="fab fa-facebook-f"></i>
-              الدخول عبر الفيس بوك</span> </button>
+          <button class="btn facebook-btn social-btn w-100" type="button">
+            <span><i class="fab fa-facebook-f"></i>{{'sign_up.facebook'|translate}} </span>
+          </button>
         </div>
 
         <div class="col-sm-6 col-12">
-          <button class="btn social-btn btn-danger w-100" type="button"><span><i class="fab fa-google-plus-g"></i>
-              Google الدخول بـواسطه </span> </button>
+          <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-longtitle="true" w-100></div> -->
+          <button class="btn social-btn btn-danger w-100" type="button">
+            <span
+              ><i class="fab fa-google-plus-g"></i>  {{'sign_up.google'|translate}}
+            </span>
+          </button>
         </div>
       </div>
 
-      <p style="text-align:center"> أو </p>
+      <p style="text-align: center">{{'sign_up.or'|translate}}</p>
 
       <div class="row mb-3">
+        <label for="Name" class="col-sm-3 col-form-label"> {{'sign_up.name'|translate}} </label>
+        <div class="col-sm-9">
+          <input ngModel #name="ngModel" type="text" name="name" id="inputName" class="form-control"
+            [placeholder]="'sign_up.name_placeholder'|translate" required />
+          <div class="alert alert-danger" *ngIf="name.invalid && name.touched">
+            {{'valid_signup.name_valid'|translate}}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="phone" class="col-sm-3 col-form-label">
+          {{'sign_up.mobile'|translate}}
+        </label>
+        <div class="col-sm-9">
+          <input ngModel #phone="ngModel" type="phone" name="phone" id="inputPhone" class="form-control"
+            [placeholder]="'sign_up.mobile_placeholder'|translate" required />
+          <div class="alert alert-danger" *ngIf="phone.invalid && phone.touched">
+            {{'valid_signup.mobile_valid'|translate}}
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="email" class="col-sm-3"> {{'sign_up.email'|translate}}</label>
 
         <div class="col-sm-9">
-          <input type="text" id="inputName" class="form-control " placeholder="Full Name" required="" autofocus="">
+          <input ngModel #email="ngModel" type="email" name="email" id="inputEmail" class="form-control col-form-label"
+            placeholder="example@domain.com" required email />
+          <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">
+            {{'valid_signup.email_required'|translate}}
+          </div>
+          <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">
+            {{'valid_signup.email_valid'|translate}}
+          </div>
         </div>
-        <label for="Name" class="col-sm-3 col-form-label"> *الأسم </label>
       </div>
 
       <div class="row mb-3">
+        <label for="password" class="col-sm-3"> {{'sign_up.password'|translate}} </label>
+
         <div class="col-sm-9">
-          <input type="phone" id="inputPhone" class="form-control " placeholder=" Your Phone Number" required=""
-            autofocus="">
+          <input ngModel #password="ngModel" type="password" name="password" id="inputPassword" class="form-control"
+            [placeholder]="'sign_up.password'|translate" required minlength="6" />
+          <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">
+            {{'valid_signup.password_reqired'|translate}}
+          </div>
+          <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength">
+            {{'valid_signup.password_valid'|translate}}
+          </div>
         </div>
-        <label for="phone" class="col-sm-3 col-form-label"> *رقم الموبيل </label>
+
       </div>
 
       <div class="row mb-3">
+        <label for="date" class="col-sm-3"> تاريخ الميلاد </label>
+
         <div class="col-sm-9">
-          <input type="email" id="inputEmail" class="form-control col-form-label" placeholder="example@domain.com"
-            required="" autofocus="">
+          <input type="date" id="inputDate" class="form-control" />
         </div>
-        <label for="email" class="col-sm-3"> *الاميل </label>
       </div>
 
       <div class="row mb-3">
-        <div class="col-sm-9">
-          <input type="password" id="inputPassword" class="form-control" placeholder="password" required="">
-        </div>
-        <label for="password" class="col-sm-3"> *كلمة المرور </label>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-sm-9">
-          <input type="date" id="inputDate" class="form-control " required="" autofocus="">
-        </div>
-        <label for="date" class="col-sm-3"> *تاريخ الميلاد </label>
-      </div>
-
-      <div class="row mb-3">
-
+        <p class="col-3">النوع</p>
         <div class="col-sm-9">
           <div class="row text-center">
             <div class="form-check col-6">
               <label class="form-check-label" for="Gender">
-                <input type="radio" class="form-check-input" name="Gender" id="inputGender" value="checkedValue">
+                <input type="radio" class="form-check-input" name="Gender" id="inputGender" value="checkedValue" />
                 ذكر
               </label>
             </div>
 
             <div class="form-check col-6">
               <label class="form-check-label" for="Gender">
-                <input type="radio" class="form-check-input" name="Gender" id="inputGender2" value="checkedValue">
+                <input type="radio" class="form-check-input" name="Gender" id="inputGender2" value="checkedValue" />
                 أنثى
               </label>
             </div>
           </div>
         </div>
-        <p class="col-3">*النوع</p>
       </div>
-
-
-
       <div class="row mb-3">
-        <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> اشترك
-          الان
+        <button class="btn btn-success btn-block" [disabled]="f.invalid">
+          <i class="fas fa-sign-in-alt"></i> {{'sign_up.join'|translate}}
         </button>
-        <a href="./login.html" id="forgot_pswd" class="text-center">هل لديك حساب بالفعل؟</a>
+        <a routerLink="/Login" id="forgot_pswd" class="text-center">{{'sign_up.already_registered'|translate}}</a>
       </div>
-
     </form>
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
   </div>
-
 </section>
