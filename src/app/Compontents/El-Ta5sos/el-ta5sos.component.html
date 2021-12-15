@@ -1,23 +1,40 @@
 <app-heading></app-heading>
-
 <div class="d-flex mt-2 me-5" style="font-size: 13px; font-weight: bolder" dir="rtl">
   <a style="text-decoration: none" href=""><span> فيزيتا </span></a>
   <p><span> / التخصصات</span></p>
 </div>
 
 <section class="container-fluid" dir="rtl" id="boody">
+  <div *ngIf="langFlag">
+    <div *ngFor="let category of categoies,let i=index">
+      <p>
+        <a class="" data-bs-toggle="collapse" [href]="'#a'+i" role="button" aria-expanded="false"
+          aria-controls="collapseExample">
+          <img [src]="category.img[0]" style="height: 40px;" class="Collapsiblestyle__Icon-sc-1ck8q4h-3 dFMqPf">
+          {{category.name}}
+        </a>
+      </p>
+      <div class="collapse mb-3" [id]="'a'+i">
+        <div class="row p-3 me-3">
+          <a href="#" class="col-md-4 row mt-1" *ngFor="let item of category.category">{{item.name}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div *ngFor="let category of categoies,let i=index">
-    <p>
-      <a class="" data-bs-toggle="collapse" [href]="'#a'+i" role="button" aria-expanded="false"
-        aria-controls="collapseExample">
-        <img [src]="category.img[0]" style="height: 40px;" class="Collapsiblestyle__Icon-sc-1ck8q4h-3 dFMqPf">
-        {{category.name}}
-      </a>
-    </p>
-    <div class="collapse mb-3" [id]="'a'+i">
-      <div class="row p-3 me-3">
-        <a href="#" class="col-md-4 row mt-1" *ngFor="let item of category.category">{{item.name}}</a>
+  <div *ngIf="!langFlag" dir="ltr">
+    <div *ngFor="let category of categoies,let i=index">
+      <p>
+        <a class="" data-bs-toggle="collapse" [href]="'#a'+i" role="button" aria-expanded="false"
+          aria-controls="collapseExample">
+          <img [src]="category.img[0]" style="height: 40px;" class="Collapsiblestyle__Icon-sc-1ck8q4h-3 dFMqPf">
+          {{category.nameen}}
+        </a>
+      </p>
+      <div class="collapse mb-3" [id]="'a'+i">
+        <div class="row p-3 me-3">
+          <a href="#" class="col-md-4 row mt-1" *ngFor="let item of category.category">{{item.nameen}}</a>
+        </div>
       </div>
     </div>
   </div>

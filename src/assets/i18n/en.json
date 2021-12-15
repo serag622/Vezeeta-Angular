@@ -1,0 +1,174 @@
+{
+    "navbar": {
+        "sign_up": "Sign Up",
+        "login": "Login",
+        "logout": "Logout",
+        "vezeeta_for_doctors": "Vezeeta For Doctors",
+        "contact_us": "Contact Us",
+        "lang": "عربي"
+    },
+    "heading": {
+        "row_1": "Book with the best doctor in Egypt based on Speciality",
+        "row_2": {
+            "onlin": "Book online or call",
+            "phone": "16676"
+        },
+        "row_3": "15000 Doctors -9000 Professors and Consultants - More than 40 Specualties"
+    },
+    "search_bar": {
+        "select_1": {
+            "title": "Choose speciality",
+            "float_title": "Select a speciality"
+        },
+        "select_2": {
+            "title": "Choose City",
+            "float_title": "In this city"
+        },
+        "select_3": {
+            "title": "Choose area",
+            "float_title": "In this rea"
+        },
+        "select_4": {
+            "title": "Doctor name or hospital",
+            "float_title": "Or search by name"
+        },
+        "search_btn": "Search"
+    },
+    "home": {
+        "new_service": "New Services for better health",
+        "pharmacy": "Pharmacy",
+        "medicine": "Get your medicine amd all pharmacy needs",
+        "order": "Please order",
+        "teleconsultation": "Teleconsultation",
+        "voice_video": "Schedule a voice or video call with a specialized doctor",
+        "book_call": "Book a Call",
+        "home_visit": "Home Visit",
+        "choose_speciality": "Choose the Specialtiy, and the doctoe will visit you at home",
+        "book_visit": "Book a visit",
+        "corona": "Corona Symptoms",
+        "ask": "You can ask and consult an internist about corona symptoms throught a free call,sponsored by the Ministry of Health an Population, from 8 am to 12 am",
+        "all_needs": "All your healthcare needs",
+        "search_book": "Search and book a clinic visit, home visit, or a teleconsultation. Order your medicine and book a service or operation.",
+        "verified": "Verified patient reviews",
+        "docor_ratings": "Doctor ratings are from patients who booked and visited the doctor through Vezeeta.",
+        "your_booking": "Your booking is confirmed",
+        "yor_booking_confirmed": "Your booking is automatically confirmed, as the doctor specifies his working hours and is notified of the booking details.",
+        "book_for_free": "Book for free, and pay in the clinic",
+        "book_for_free_text": "The consultation fees stated on Vezeeta are the actual doctor's fees with no extra charges.",
+        "install":"Download the Application",
+        "compare":"Compare, choose, and book. Track your appointments with ease, rate your doctor's visit, and order your medicine online."
+    },
+    "home_header": {
+        "better_health": " Better Healthcare for a Better Life",
+        "or_call": "Book online or call",
+        "number": "16676"
+    },
+    "sign_up": {
+        "sign_up": "Sign Up",
+        "facebook": "Connect With Facebook",
+        "google": "Connect With Google",
+        "or": "or",
+        "name": "Your Name",
+        "name_placeholder": "First name and Last Name",
+        "mobile": "Mobile Number",
+        "mobile_placeholder": "Mobile Number",
+        "email": "Email Address",
+        "password": "Password",
+        "join": "Join Now",
+        "already_registered": "Already Registered in Vezeeta?"
+    },
+    "valid_signup": {
+        "name_valid": "Full Name is required",
+        "email_valid": "Email Address is invalid",
+        "mobile_valid": "Mobile Number is required",
+        "password_valid": "Password is too short!it should be more than 6 Characters",
+        "password_reqired": "Password is required",
+        "email_required": "Email Address is required"
+    },
+    "login": {
+        "login": "Login",
+        "facebook": "Connect With Facebook",
+        "google": "Connect With Google",
+        "or": "or",
+        "email": "Email",
+        "password": "Password",
+        "login_btn": "LOGIN",
+        "forget_password": "Forgot Your Password?",
+        "check_remember_me": "Remember Me",
+        "sign_up": "Sign Up"
+    },
+    "valid_login": {
+        "password_valid": "Password is too short!it should be more than 6 Characters",
+        "password_reqired": "Password is required",
+        "email_required": "Email Address is required",
+        "email_valid": "Email Address is invalid"
+    },
+    "contact_us_form": {
+        "contact_us": "Contact Us",
+        "greetings": "We will be happy to receive your inquiries and suggestions.",
+        "name": "Your Name",
+        "mobile": "Mobile Number",
+        "email": "Email Address",
+        "send": "Send"
+    },
+    "contact_us_form_valid": {
+        "name_valid": "Full Name is required",
+        "name_placeholder": "First name and Last Name",
+        "phone_placeholder": "Mobile Number",
+        "email_valid": "Email Address is invalid",
+        "mobile_valid": "Mobile Number is required",
+        "password_valid": "Password is too short!it should be more than 6 Characters",
+        "password_reqired": "Password is required",
+        "email_required": "Email Address is required"
+    },
+    "contact_us_info": {
+        "call_us": "Call Us",
+        "hotline": "16676",
+        "cost": "Cost of regular call",
+        "outside_call": "From outside Egypt call:",
+        "outside_number": "+2 02 259 83 999",
+        "address": "Address",
+        "address_details": "124 Othman Ibn Affan St. behind Military college - Heliopolis",
+        "mail_us": "Mail US",
+        "mail_us_at": "customercare@vezeeta.com"
+    },
+    "region": {
+        "input_placeholder": "Find a Doctor in Your City",
+        "vezeeta": "Vezeeta",
+        "area": "areas",
+        "search": "No found results that matches your search"
+    },
+    "insurance": {
+        "input_placeholder": "Find a Doctor With your insurance",
+        "vezeeta": "Vezeeta",
+        "insurance": "Insurances",
+        "search": "No found results that matches your search"
+    },
+    "footer": {
+        "first_col": {
+            "about_us": "About Us",
+            "our_team": "Our Team",
+            "careers": "Careers",
+            "press": "Press"
+        },
+        "second_col": {
+            "search_by": "Search By",
+            "speciality": "Speciality",
+            "area": "Area",
+            "insurance": "Insurance",
+            "hospital": "Hospital",
+            "center": "Center"
+        },
+        "third_col": {
+            "is_doctor": "Are You A Doctor?",
+            "join_dr": "Join Vezeeta Doctors"
+        },
+        "fourth_col": {
+            "need_help": "Need Help?",
+            "Contact_us": "Contact Us",
+            "terms_of_use": "Terms Of Use",
+            "privacy": "Privacy Policy",
+            "doctors_privacy": "Doctors Privacy Policy"
+        }
+    }
+}

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/Users';
+import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
@@ -14,7 +15,10 @@ export class NavBarComponent implements OnInit {
 
   isUser: boolean = false;
   // userDashbord !: User | any ;
-  constructor(private languageService: LanguageService, private as: AuthService, private router: Router) { }
+  constructor(private languageService: LanguageService,
+    private as: AuthService,
+    private router: Router,
+    private translationService: TranslateService) { }
 
   ngOnInit(): void {
     this.as.user.subscribe(user => {
@@ -32,14 +36,18 @@ export class NavBarComponent implements OnInit {
       this.router.navigate(['/Login'])
     })
   }
-    changeLanguage( lang: HTMLAnchorElement) {
-      let lan = lang.innerHTML;
-      if (lan === "English") {
-        this.languageService.langugeEvent.emit("ar")
-      }
-      else if (lan === "عربي") {
-        this.languageService.langugeEvent.emit("en");
-      }
-      console.log(lang.innerHTML);
+  changeLanguage(lang: HTMLAnchorElement) {
+    let lan = lang.innerHTML;
+    if (lan === "English") {
+      // lang.innerHTML = "عربي"
+      this.languageService.langugeEvent.emit(false);
+      this.translationService.use("en");
     }
+    else if (lan === "عربي") {
+      this.languageService.langugeEvent.emit(true);
+      //  lang.innerHTML = "English"
+      this.translationService.use("ar");
+    }
+    console.log(lang.innerHTML);
+  }
 }

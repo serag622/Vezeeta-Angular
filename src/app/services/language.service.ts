@@ -4,6 +4,6 @@ import { EventEmitter, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LanguageService {
-public langugeEvent =new EventEmitter<String>();
+public langugeEvent =new EventEmitter<boolean>();
   constructor() { }
 }

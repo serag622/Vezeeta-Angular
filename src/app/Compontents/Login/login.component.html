@@ -6,7 +6,7 @@
         style="border-radius: 15px 15px 0px 0px; width: 100%"
       >
         <span>
-          <h5 class="mb-2 font-weight-normal fw-bolder">دخــــــــول</h5>
+          <h5 class="mb-2 font-weight-normal fw-bolder">{{'login.login'|translate}}</h5>
         </span>
       </div>
 
@@ -15,7 +15,7 @@
           <div class="col-sm-6 col-12">
             <button class="btn facebook-btn social-btn w-100" type="button">
               <span
-                ><i class="fab fa-facebook-f"></i> الدخول عبر الفيس بوك</span
+                ><i class="fab fa-facebook-f"></i> {{'login.facebook'|translate}}</span
               >
             </button>
           </div>
@@ -25,17 +25,16 @@
             <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-longtitle="true"></div> -->
             <button class="btn social-btn btn-danger w-100" type="button">
               <span
-                ><i class="fab fa-google-plus-g"></i>  الدخول
-                بـواسطه Google</span
+                ><i class="fab fa-google-plus-g"></i> {{'login.google'|translate}}</span
               >
             </button>
           </div>
         </div>
 
-        <p style="text-align: center">أو</p>
+        <p style="text-align: center">{{'login.or'|translate}}</p>
 
         <div class="text-end mb-3">
-          <label for="email" class="mb-2">  البريد الإلكتروني </label>
+          <label for="email" class="mb-2">  {{'login.email'|translate}} </label>
           <input
             ngModel
             #email="ngModel"
@@ -50,18 +49,18 @@
             class="alert alert-danger"
             *ngIf="email.touched && email.errors?.required"
           >
-            Email is Required
+            {{'valid_login.email_required'|translate}}
           </div>
           <div
             class="alert alert-danger"
             *ngIf="email.touched && email.errors?.email"
           >
-            Enter Valid Email
+            {{'valid_login.email_valid'|translate}}
           </div>
         </div>
 
         <div class="text-end mb-3">
-          <label for="password" class="mb-2"> كلمة المرور </label>
+          <label for="password" class="mb-2"> {{'login.password'|translate}} </label>
           <input
             ngModel
             #password="ngModel"
@@ -76,25 +75,25 @@
             class="alert alert-danger"
             *ngIf="password.touched && password.errors?.required"
           >
-            Password is Required
+            {{'valid_login.password_reqired'|translate}}
           </div>
           <div
             class="alert alert-danger"
             *ngIf="password.touched && password.errors?.minlength"
           >
-            Your Password Must Be Than 6 Numbers
+          {{'valid_login.password_valid'|translate}}
           </div>
         </div>
 
         <button class="btn btn-danger btn-block w-100" type="submit">
           <i class="fas fa-sign-in-alt"></i>
-          تسجيل الدخول
+          {{'login.login_btn'|translate}}
         </button>
 
         <div class="d-flex justify-content-between p-3">
-          <a href="#" id="forgot_pswd">هل نسيت كلمة السر؟</a>
+          <a href="#" id="forgot_pswd">{{'login.forget_password'|translate}}</a>
           <div class="">
-            <label for="rememberme"> تذكرني </label>
+            <label for="rememberme"> {{'login.check_remember_me'|translate}} </label>
             <input
               type="checkbox"
               id="togglebtn"
@@ -112,7 +111,7 @@
           (click)="toBe()"
         >
           <i class="fas fa-user-plus"></i>
-          إنشاء حساب جديد
+         {{'login.sign_up'|translate}}
         </button>
       </form>
       <div class="alert alert-danger" *ngIf="errorMessage">

@@ -12,7 +12,6 @@ export class DoctorsComponent implements OnInit,OnDestroy {
 
   Doctors: Doctor[] | any  = [];
   DocObserable !: Subscription;
-
   pageSize :number = 8;
   noOpages :number[]=[] ;
   DoctorsViewed :Doctor[] = [];

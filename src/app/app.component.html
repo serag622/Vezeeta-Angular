@@ -1,5 +1,8 @@
-<app-nav-bar></app-nav-bar>
-<div>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<!-- <html [lang]='lang' [dir]="'langEvent'?'rtl':'ltr'"> -->
+<div [lang]='lang' [dir]='langEvent'>
+    <app-nav-bar></app-nav-bar>
+    <div>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </div>
 </div>
