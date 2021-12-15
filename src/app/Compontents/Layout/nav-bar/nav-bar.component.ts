@@ -15,10 +15,9 @@ import { UsersService } from 'src/app/services/users.service';
 export class NavBarComponent implements OnInit {
 
   isUser !: boolean ;
-  // userDashbord !: User | any ;
   User !: User | any;
   userSubscription !: Subscription
-  techSpecMeta !: { make: string; };
+
   constructor(private languageService: LanguageService, private as: AuthService, private router: Router, private us: UsersService) { }
 
 
@@ -32,7 +31,6 @@ export class NavBarComponent implements OnInit {
     //   }
     //   else this.isUser = false;
     // })
-    this.techSpecMeta= {make: ""};
 
     this.as.isSignedIn.subscribe(isSignedIn => {
       this.isUser = isSignedIn;

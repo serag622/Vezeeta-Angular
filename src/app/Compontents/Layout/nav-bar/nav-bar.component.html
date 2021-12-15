@@ -42,8 +42,6 @@
             <a class="nav-link text-light btn border-1 border-light px-1 me-1" routerLink="/Register" *ngIf="!isUser">
               انضم الان</a>
 
-            <!-- <a class="nav-link btn border-1 border-light px-2 me-2" *ngIf="isUser" (click)="logout()">
-              تسجيل الخروج</a> -->
 
               <div ngbDropdown class=" " *ngIf="isUser">
                 <a class="nav-link btn border-1 border-light px-2 me-1 text-light" id="dropdownBasic1" ngbDropdownToggle>{{User?.name}}</a>

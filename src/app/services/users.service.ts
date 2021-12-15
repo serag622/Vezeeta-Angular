@@ -13,13 +13,18 @@ export class UsersService {
       name ,
       password,
       email,
-      phone
+      phone,
+      isAdmin: false,
+      isDoctor: false
     })
   }
 
   getUser(id :string){
-  return( this.fs.collection('users').doc(id).valueChanges({ idField:'id'}))
+  return( this.fs.collection('users').doc(id).valueChanges())
+  }
 
+  getUserbyEmail(email: string ){
+    return this.fs.collection('users',ref=>ref.where('email','==',email)).valueChanges({ idField: 'id' })
   }
 
 

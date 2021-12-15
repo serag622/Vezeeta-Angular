@@ -2,40 +2,21 @@
   font-family: "Scheherazade New", serif;
 }
 
-body {
-  background-color: #e5e5e5;
-  overflow-x: hidden;
-}
 
-/*  ---------------Header------------------   */
 
-.navbar-nav a {
-  color: whitesmoke;
-}
-.navbar-nav a:hover {
-  text-decoration: underline;
-}
 
-.navBorder {
-  color: whitesmoke;
-  text-align: center;
-  line-height: inherit;
-}
 
 /*  -----------------Body--------------------   */
 
 #logreg-forms {
-  width: 37%;
+  width: 40%;
   margin: 5% auto;
   background-color: white;
   border-radius: 20px;
   box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.16), 5px 5px 7px rgba(0, 0, 0, 0.26);
 }
 
-#logreg-forms form {
-  width: 100%;
-  padding: 25px;
-}
+
 
 #logreg-forms .form-control {
   position: relative;
@@ -101,27 +82,4 @@ body {
   margin: 0 auto;
 }
 
-/*  -----------------Footer--------------------   */
 
-ul {
-  padding: 10px;
-  margin: 0px;
-}
-
-footer ul li {
-  list-style-type: none;
-  margin-top: 15px;
-}
-
-footer ul li a {
-  text-decoration: none;
-  position: relative;
-  left: 20px;
-  color: whitesmoke;
-  font-size: 1em;
-}
-
-footer ul li a:hover {
-  text-decoration: underline;
-  color: whitesmoke;
-}
