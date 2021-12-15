@@ -19,6 +19,16 @@ import { BookingInformationComponent } from './Compontents/DoctorPage/booking-in
 import { SearchBarComponent } from './Compontents/Shared/search-bar/search-bar.component';
 import { RegionDetailsComponent } from './Compontents/region/Region-Details/region-details.component';
 import { ColumnDataComponent } from './Compontents/region/Column-Data/column-data.component';
+<<<<<<< HEAD
+=======
+import { InsuranceComponent } from './Compontents/insurance/insurance/insurance.component';
+import { InsuranceColumnDataComponent } from './Compontents/insurance/insurance-column-data/insurance-column-data.component';
+import {environment} from '../environments/environment';
+import { DoctorsComponent } from './Compontents/DoctorsPage/doctors/doctors.component';
+import { DoctorCardComponent } from './Compontents/DoctorsPage/doctor-card/doctor-card.component';
+import { RegionDetailsComponent } from './Compontents/Region/Region-Details/region-details.component';
+import { ColumnDataComponent } from './Compontents/Region/Column-Data/column-data.component';
+>>>>>>> 3a8ae1d2d257fb8aa615cdfd13094a5635cee9c3
 import { InsuranceComponent } from './Compontents/insurance/insurance/insurance.component';
 import { InsuranceColumnDataComponent } from './Compontents/insurance/insurance-column-data/insurance-column-data.component';
 import { DoctorsComponent } from './Compontents/DoctorsPage/doctors/doctors.component';
@@ -32,11 +42,14 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
+<<<<<<< HEAD
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+=======
+>>>>>>> 3a8ae1d2d257fb8aa615cdfd13094a5635cee9c3
 @NgModule({
   declarations: [
     AppComponent,
