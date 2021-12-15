@@ -22,14 +22,21 @@ export class AllReservationComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit(): void {
-
-    const name = this.activatedRoute.snapshot.params.user
+    const name = this.activatedRoute.snapshot.params.name
+    const path = this.activatedRoute.snapshot.url[0].path
+     console.log(path)
+    if(path == "AllReservations"){
     console.log(name)
-
     this.ResSubscribe = this.rs.GetAllReservationsofUser(name).subscribe(res =>{
       this.Reservations = res;
     })
-
+  }
+  else if(path == "DoctorReservations")
+  {
+    this.ResSubscribe = this.rs.GetAllReservationofDoctor(name).subscribe(res =>{
+      this.Reservations = res;
+    })
+  }
 
 
 

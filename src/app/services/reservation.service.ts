@@ -44,6 +44,10 @@ export class ReservationService {
     return this.firebase.collection('Reservation',ref=>ref.where('userName','==',name)).valueChanges({ idField: 'id' })
   }
 
+  GetAllReservationofDoctor(name:string){
+    return this.firebase.collection('Reservation',ref=>ref.where('doctorName','==',name)).valueChanges({ idField: ''})
+  }
+
 
 
 }

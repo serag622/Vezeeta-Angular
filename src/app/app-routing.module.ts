@@ -25,7 +25,8 @@ const routes: Routes = [
   {path:"insurances",component:InsuranceComponent},
   {path:'Doctors',component:DoctorsComponent},
   {path:'Reservation/:id',component:ReservationComponent},
-  {path:'AllReservations/:user',component:AllReservationComponent},
+  {path:'AllReservations/:name',component:AllReservationComponent},
+  {path:'DoctorReservations/:name',component:AllReservationComponent}
 ];
 
 @NgModule({
