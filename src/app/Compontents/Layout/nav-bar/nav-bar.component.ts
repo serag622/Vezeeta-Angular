@@ -14,7 +14,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class NavBarComponent implements OnInit {
 
-  isUser !: boolean ;
+  // isUser !: boolean ;
   User !: User | any;
   userSubscription !: Subscription
 
@@ -32,27 +32,29 @@ export class NavBarComponent implements OnInit {
     //   else this.isUser = false;
     // })
 
-    this.as.isSignedIn.subscribe(isSignedIn => {
-      this.isUser = isSignedIn;
-      const user = JSON.parse(localStorage.getItem('User') as string)
-      if(this.isUser){
-        this.userSubscription = this.us.getUser(user.uid).subscribe(result => {
-           this.User = result;
-           console.log(this.userSubscription);
-         })
-      }
-      else if(!this.isUser && this.userSubscription){
-         this.userSubscription.unsubscribe()
-         console.log(this.userSubscription.closed)
-      }
+    // this.as.isSignedIn.subscribe(isSignedIn => {
+    //   this.isUser = isSignedIn;
+    //   const user = JSON.parse(localStorage.getItem('User') as string)
+    //   if(this.isUser){
+    //     this.userSubscription = this.us.getUser(user.uid).subscribe(result => {
+    //        this.User = result;
+    //        console.log(this.userSubscription);
+    //      })
+    //   }
+    //   else if(!this.isUser && this.userSubscription){
+    //      this.userSubscription.unsubscribe()
+    //      console.log(this.userSubscription.closed)
+    //   }
+    // })
+
+    this.userSubscription = this.as.User.subscribe(user => {
+      this.User =user
     })
-
-
   }
 
   logout() {
     this.as.logout().then(() => {
-      this.isUser = false;
+      // this.isUser = false;
       localStorage.removeItem('User')
       this.router.navigate(['/'])
     })

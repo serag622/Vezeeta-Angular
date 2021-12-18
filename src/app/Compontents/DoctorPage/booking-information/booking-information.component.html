@@ -53,7 +53,7 @@
             </div>
             <div class="modal-body">
 
-              <div *ngIf="isUser">
+              <div *ngIf="User">
                  <h5 class="text-center text_1 fw-bold">بيــــانـــات الــحــجــز</h5>
                  <h5 class="text-center text_1 fw-bold">{{d.day}} <span *ngIf="canBook"> in {{d.bookhour}} pm </span> </h5>
                  <hr/>
@@ -82,7 +82,7 @@
                  </div>
              </div>
 
-             <div *ngIf='!isUser'>
+             <div *ngIf='!User'>
               <div class='text-center'>
                   <p class='fw-bold text_1 fs-4'>Please Login first to book appointment </p>
                   <a class='btn btn-success w-50 py-3' routerLink='/Login' (click)="modal.close('Save click')" >Sign in</a>
@@ -94,8 +94,8 @@
 
             </div>
             <div class="modal-footer d-flex justify-content-center">
-              <button *ngIf="isUser && canBook"  type='button' class="btn btn-danger w-50" (click)="book(d)">تأكيد الحجز</button>
-              <p *ngIf=" isUser && !canBook" class='btn btn-secondary w-50 ' href>لا يوجد حجز</p>
+              <button *ngIf="User && canBook"  type='button' class="btn btn-danger w-50" (click)="book(d)">تأكيد الحجز</button>
+              <p *ngIf=" User && !canBook" class='btn btn-secondary w-50 ' href>لا يوجد حجز</p>
               <button type="button" class="btn btn-outline-secondary w-25" (click)="modal.close('Save click')">إلغاء</button>
             </div>
           </ng-template>

@@ -19,29 +19,23 @@ export class LoginComponent implements OnInit {
 
   login(form: any) {
     let data = form.value;
+      // if(this.isDoctor) {
+      //   console.log('doctor')
+      //   this.as.loginDoctor(data.email,data.password)
+      // }
+      // else{
+      //   console.log('user')
+      //   this.as.loginUser(data.email,data.password)
+      // }
+      console.log(this.isDoctor)
+      this.as.login(data.email,data.password,this.isDoctor).then(() => {
+        this.errorMessage=""
+        this.router.navigate(["/"])
+      }).catch(() => {
+        this.errorMessage="you entered inValid Email or Password"
+        console.log('error')
+      })
 
-      if(this.isDoctor) {
-        this.as.loginDoctor(data.email,data.password)
-        .then((result) => {
-           localStorage.setItem('User', JSON.stringify(result.user));
-        }).then(() => {
-            this.router.navigate(['/']);
-          })
-          .catch(err => {
-            this.errorMessage = " That Email is not a Doctor "
-          })
-      }
-      else{
-        this.as.loginUser(data.email,data.password).then((result)=>{
-
-          localStorage.setItem('User', JSON.stringify(result.user));
-        }).then(() => {
-            this.router.navigate(['/']);
-          })
-          .catch(err => {
-            this.errorMessage = err.message
-          })
-      }
   }
 
   toBe() {

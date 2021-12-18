@@ -1,8 +1,12 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { User } from '../model/Users';
 import { UsersService } from './users.service';
+import { switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,46 +14,66 @@ import { UsersService } from './users.service';
 
 export class AuthService {
 
-  // user : Observable<firebase.default.User | null>
+  User : BehaviorSubject<User | any> = new BehaviorSubject(null);
 
   isSignedIn = new EventEmitter()
 
-  constructor(private faAuth: AngularFireAuth , private us: UsersService) {
-    // this.user = faAuth.user
+  constructor(private faAuth: AngularFireAuth , private us: UsersService,private fs : AngularFirestore, private router : Router) {
 
-    this.faAuth.authState.subscribe((user) => {
-      if (user) {
-        this.isSignedIn.emit(true);
+    this.faAuth.authState.pipe(switchMap((auth)=>{
+      if(auth){
+        return this.fs.doc('users/'+auth.uid).valueChanges()
+      }else{
+        return  of(null);
       }
-      else{
-        this.isSignedIn.emit(false);
-      }
-    });
+    })).subscribe(user=>{
+      this.User.next(user)
+    })
 
   }
-
 
   singup(email: string , password: string) {
     return this.faAuth.createUserWithEmailAndPassword(email, password)
   }
 
-  loginDoctor(email: string, password: string) : Promise<any> {
-    this.us.getUserbyEmail(email).subscribe((next) => {
-      const user : User | any= next
-      if(user.isDoctor){
-        console.log('auth doctor')
-      return this.faAuth.signInWithEmailAndPassword(email, password)
-      }
-      else{
-        return Promise.reject()
-      }
-    })
-    return Promise.reject()
-  }
-  
 
-  loginUser(email: string , password: string){
-    return this.faAuth.signInWithEmailAndPassword(email, password)
+  // loginDoctor(email: string, password: string)  {
+  //   this.us.getUserbyEmail(email).subscribe((next) => {
+  //     const user : User | any= next
+  //     console.log('doctor'+user)
+
+  //   })
+  // }
+
+
+  // loginUser(email: string , password: string) {
+  //   this.us.getUserbyEmail(email).subscribe((next) => {
+  //     const user : User | any = next
+  //     console.log('user'+user)
+  //   })
+  // }
+
+
+
+  login(email: string , password: string,isDoctor:boolean) :Promise<any> {
+  this.us.getUserbyEmail(email).subscribe((next) => {
+   const user : User[] | any=next;
+   console.log(user)
+   console.log(user[0])
+
+    switch (user[0].isDoctor) {
+      case isDoctor:
+        console.log('ok')
+         return (this.faAuth.signInWithEmailAndPassword(email, password))
+        break;
+
+      default:
+        return Promise.reject
+        break;
+    }
+  })
+
+   return Promise.reject()
   }
 
 
@@ -57,4 +81,7 @@ export class AuthService {
   logout() {
     return this.faAuth.signOut()
   }
+
 }
+
+

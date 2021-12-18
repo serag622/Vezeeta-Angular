@@ -23,7 +23,7 @@ export class BookingInformationComponent implements OnInit,OnDestroy {
   Atomorrow : Date = new Date(this.today)
 
   canBook:boolean = true;
-  isUser !: boolean;
+  // isUser !: boolean;
   userSubscription !: Subscription
 
   dates!: [] | any
@@ -36,7 +36,7 @@ export class BookingInformationComponent implements OnInit,OnDestroy {
    }
 
   ngOnDestroy(): void {
-    if(this.isUser){
+    if(this.User){
     this.userSubscription.unsubscribe()
     }
   }
@@ -57,22 +57,28 @@ export class BookingInformationComponent implements OnInit,OnDestroy {
     //   else this.isUser = false;
     // })
 
-    const user = JSON.parse(localStorage.getItem('User') as string)
-     if(user){
-      this.isUser = true
-        this.userSubscription = this.us.getUser(user.uid).subscribe(user => {
-          this.User = user
-        })
-     }
-     else{
-       this.isUser = false
-     }
+    // const user = JSON.parse(localStorage.getItem('User') as string)
+    //  if(user){
+    //   this.isUser = true
+    //     this.userSubscription = this.us.getUser(user.uid).subscribe(user => {
+    //       this.User = user
+    //     })
+    //  }
+    //  else{
+    //    this.isUser = false
+    //  }
+    this.userSubscription = this.as.User.subscribe(user => {
+      this.User = user
+    })
+
+
 
   }
 
   open(content: any,date: any) {
 
-   console.log(this.isUser)
+  //  console.log(this.isUser)
+
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {

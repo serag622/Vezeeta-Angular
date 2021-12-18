@@ -31,19 +31,19 @@
             <span class="navBorder">|</span>
 
             <a class="nav-link text-light" routerLink="/ContactUs">اتصل بنا</a>
+            <span class="navBorder"  >|</span>
+
+            <a class="nav-link text-light" routerLink="/Doctors"  >فزيتا للاطباء</a>
             <span class="navBorder">|</span>
 
-            <a class="nav-link text-light" routerLink="/Doctors">فزيتا للاطباء</a>
-            <span class="navBorder">|</span>
+            <a class="nav-link text-light" routerLink="/Login" *ngIf="!User">دخول</a>
+            <span class="navBorder" *ngIf="!User">|</span>
 
-            <a class="nav-link text-light" routerLink="/Login" *ngIf="!isUser">دخول</a>
-            <span class="navBorder" *ngIf="!isUser">|</span>
-
-            <a class="nav-link text-light btn border-1 border-light px-1 me-1" routerLink="/Register" *ngIf="!isUser">
+            <a class="nav-link text-light btn border-1 border-light px-1 me-1" routerLink="/Register" *ngIf="!User">
               انضم الان</a>
 
 
-              <div ngbDropdown class=" " *ngIf="isUser">
+              <div ngbDropdown class=" " *ngIf="User">
                 <a class="nav-link btn border-1 border-light px-2 me-1 text-light" id="dropdownBasic1" *ngIf="!User?.isDoctor"  ngbDropdownToggle> {{User?.name}} </a>
                 <a class="nav-link btn border-1 border-light px-2 me-1 text-light" id="dropdownBasic1" *ngIf="User?.isDoctor"  ngbDropdownToggle> Dr / {{User?.name}} </a>
                 <div ngbDropdownMenu class="text-danger" aria-labelledby="dropdownBasic1">
