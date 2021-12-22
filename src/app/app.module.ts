@@ -32,7 +32,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReservationComponent } from './Compontents/reservation/reservation.component';
 import { AllReservationComponent } from './Compontents/all-reservation/all-reservation.component';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core'
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 

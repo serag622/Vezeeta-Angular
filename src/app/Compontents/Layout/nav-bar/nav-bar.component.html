@@ -18,19 +18,19 @@
           </div>
 
           <div class="navbar-nav">
-            <select class="nav-link bg-transparent border-0 text-light p-1">
+            <!-- <select class="nav-link bg-transparent border-0  p-1">
               <option><a href="#">مصر</a></option>
               <option><a href="#">مصر</a></option>
               <option><a href="#">مصر</a></option>
               <option><a href="#">مصر</a></option>
               <option><a href="#">مصر</a></option>
             </select>
-            <span class="navBorder">|</span>
+            <span class="navBorder">|</span> -->
 
-         <a class="nav-link" aria-disabled="true" (click)="changeLanguage(lang)"#lang>{{'navbar.lang'|translate}}</a>
+         <a class="nav-link text-light" aria-disabled="true" (click)="changeLanguage(lang)"#lang>{{'navbar.lang'|translate}}</a>
           <span class="navBorder">|</span>
 
-            <a class="nav-link" routerLink="/ContactUs">{{'navbar.contact_us' | translate}}</a>
+            <a class="nav-link text-light" routerLink="/ContactUs">{{'navbar.contact_us' | translate}}</a>
             <span class="navBorder" *ngIf="!User?.isDoctor"  >|</span>
 
             <a class="nav-link text-light" *ngIf="!User?.isDoctor" routerLink="/Doctors"  >{{'navbar.vezeeta_for_doctors'|translate}}</a>
