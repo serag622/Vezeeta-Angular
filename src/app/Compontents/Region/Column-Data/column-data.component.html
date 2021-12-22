@@ -1,5 +1,14 @@
-<ul class="docs doc">
-    <li class="mt-md-0 mt-4" *ngFor="let item of regionDetailsToBeViewed">
+<div *ngIf="!langFlag">
+    <ul class="docs doc">
+        <li class="mt-md-0 mt-4" *ngFor="let item of regionDetailsToBeViewed">
+            <a href="#">{{item.nameen}}</a>
+        </li>
+    </ul>
+</div>
+<div *ngIf="langFlag">
+    <ul class="docs doc">
+        <li class="mt-md-0 mt-4" *ngFor="let item of regionDetailsToBeViewed">
             <a href="#">{{item.namear}}</a>
-    </li>
-</ul>
+        </li>
+    </ul>
+</div>

@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/Users';
+import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from 'src/app/services/language.service';
 import { Subscription } from 'rxjs';
 import { UsersService } from 'src/app/services/users.service';
@@ -18,8 +19,7 @@ export class NavBarComponent implements OnInit {
   User !: User | any;
   userSubscription !: Subscription
 
-  constructor(private languageService: LanguageService, private as: AuthService, private router: Router, private us: UsersService) { }
-
+  constructor(private languageService: LanguageService, private as: AuthService, private router: Router, private us: UsersService , private translationService: TranslateService) { }
 
 
   ngOnInit(): void {
@@ -59,14 +59,18 @@ export class NavBarComponent implements OnInit {
       this.router.navigate(['/'])
     })
   }
-    changeLanguage( lang: HTMLAnchorElement) {
-      let lan = lang.innerHTML;
-      if (lan === "English") {
-        this.languageService.langugeEvent.emit("ar")
-      }
-      else if (lan === "عربي") {
-        this.languageService.langugeEvent.emit("en");
-      }
-      console.log(lang.innerHTML);
+  changeLanguage(lang: HTMLAnchorElement) {
+    let lan = lang.innerHTML;
+    if (lan === "English") {
+      // lang.innerHTML = "عربي"
+      this.languageService.langugeEvent.emit(false);
+      this.translationService.use("en");
     }
+    else if (lan === "عربي") {
+      this.languageService.langugeEvent.emit(true);
+      //  lang.innerHTML = "English"
+      this.translationService.use("ar");
+    }
+    console.log(lang.innerHTML);
+  }
 }

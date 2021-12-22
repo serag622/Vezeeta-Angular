@@ -1,22 +1,29 @@
 <div class="container row doc bg-light mx-auto mt-4">
     <div>
-        <ul class="docs">
-            <li class="mt-4 mb-4" *ngFor="let region of regionList,let i=index">
-                <a data-bs-toggle="collapse" [href]="'#a'+i" aria-expanded="false" class="fw-bold title">
-                    {{region.namear}}
-                </a>
-                <div class="collapse multi-collapse mt-3 mb-3" [id]="'a'+i">
-                    <div class="container">
-                        <div class="row">
-                            <app-column-data class="col-md-4 row" *ngFor="let item of columsArr" [colNum]=item
-                                [index]=i> </app-column-data>
+       
+        <div>
+            <ul class="docs">
+                <li class="mt-4 mb-4" *ngFor="let region of regionList,let i=index">
+                    <a *ngIf="langFlag" data-bs-toggle="collapse" [href]="'#a'+i" aria-expanded="false" class="fw-bold title">
+                        {{region.namear}}
+                    </a>
+                    <a *ngIf="!langFlag"  data-bs-toggle="collapse" [href]="'#a'+i" aria-expanded="false" class="fw-bold title">
+                        {{region.nameen}}
+                    </a>
+                    <div class="collapse multi-collapse mt-3 mb-3" [id]="'a'+i">
+                        <div class="container">
+                            <div class="row">
+                                <app-column-data class="col-md-4 row" *ngFor="let item of columsArr" [colNum]=item
+                                    [index]=i> </app-column-data>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </div>
+
         <div class="text-center text-secondary fw-bold  p-md-5 fs-3 p-0" *ngIf="!regionList.length">
-            لا توجد نتائج تطابق بحثك
+            {{'region.search'|translate}}
         </div>
     </div>
 </div>

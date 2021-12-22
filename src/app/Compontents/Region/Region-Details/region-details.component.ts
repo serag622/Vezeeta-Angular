@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Region } from 'src/app/model/region.model';
 import { RegionDetails } from 'src/app/model/regionDetails.model';
+import { LanguageService } from 'src/app/services/language.service';
 import { regionService } from 'src/app/services/region-service.service';
 
 @Component({
@@ -14,9 +15,13 @@ export class RegionDetailsComponent implements OnChanges {
   regionDetailsToBeViewed: RegionDetails[] = [];
   num: number = 0;
   columsArr: number[] = [0, 1, 2]
+  langFlag!:boolean;
 
-  constructor(private regionService: regionService) {
-
+  constructor(private regionService: regionService,private lang:LanguageService) {
+    this.lang.langugeEvent.subscribe(res=>{
+      this.langFlag=res;
+      console.log(this.langFlag,"details")
+    })
   }
   getAll() {
     this.regionService.getAllRegions().subscribe(res => {

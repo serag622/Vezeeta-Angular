@@ -41,7 +41,8 @@ export class DoctorsComponent implements OnInit,OnDestroy {
   }
 
   ngOnDestroy() : void {
-    this.DocObserable.unsubscribe()
+    this.DocObserable.unsubscribe();
+    this.CatObserable.unsubscribe();
   }
 
   paging(){

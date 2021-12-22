@@ -4,8 +4,8 @@
      <div class="dropdown">
        <a class="text-decoration-none d-flex justify-content-between align-items-center  dropdown-toggle" href="#" role="button" id="drop1" data-bs-toggle="dropdown" aria-expanded="false">
          <div>
-         <p class="text_1">أنا ابحث عن دكتور</p>
-         <span class="fw-bold"><i class="fas fa-stethoscope"></i> اختار التخصص</span>
+         <p class="text_1">{{'search_bar.select_1.float_title'|translate}}</p>
+         <span class="fw-bold"><i class="fas fa-stethoscope"></i> {{'search_bar.select_1.title'|translate}}</span>
          </div>
        </a>
      
@@ -26,8 +26,8 @@
      <div class="dropdown">
        <a class="text-decoration-none d-flex justify-content-between align-items-center  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
          <div>
-         <p class="text_1">في محافظة</p>
-         <span class="fw-bold"><i class="fas fa-map-marker-alt text-danger"></i>  الجيزة </span>
+         <p class="text_1">{{'search_bar.select_2.float_title'|translate}}</p>
+         <span class="fw-bold"><i class="fas fa-map-marker-alt text-danger"></i>  {{'search_bar.select_2.title'|translate}} </span>
          </div>
        </a>
      
@@ -47,8 +47,8 @@
      <div class="dropdown">
        <a class="text-decoration-none d-flex justify-content-between align-items-center  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
          <div>
-         <p class="text_1">في المنطقة</p>
-         <span class="fw-bold"><i class="fas fa-map-marker-alt text-danger"></i> اختار المنطقة</span>
+         <p class="text_1">{{'search_bar.select_3.title'|translate}}</p>
+         <span class="fw-bold"><i class="fas fa-map-marker-alt text-danger"></i> {{'search_bar.select_3.float_title'|translate}}</span>
          </div>
        </a>
      
@@ -67,14 +67,14 @@
    <div class="col col-border">
     <a class="text-decoration-none d-flex justify-content-between align-items-center " >
          <div>
-         <p class="text_1 text-end">في محافظة</p>
-         <span class="fw-bold d-flex"><i class="fas fa-user-md ms-2"></i> <input type="text" class="border-0 bg-transparent w-100" placeholder="الدكتور او المستشفي" id="input"> </span>
+         <p class="text_1 text-end">{{'search_bar.select_2.float_title'|translate}}</p>
+         <span class="fw-bold d-flex"><i class="fas fa-user-md ms-2"></i> <input type="text" class="border-0 bg-transparent w-100" [placeholder]="'search_bar.select_4.title'|translate" id="input"> </span>
          </div>
    </a>
    </div>
 
    <div class="col bg-danger p-0"  style="border-radius: 10px 0 0 10px; cursor: pointer;"  >
-     <p class="text-light mt-2" style="font-size: 1.7em;"><i class="fas fa-search"></i> ابحث</p>
+     <p class="text-light mt-2" style="font-size: 1.7em;"><i class="fas fa-search"></i> {{'search_bar.search_btn'|translate}}</p>
    </div>
  
 

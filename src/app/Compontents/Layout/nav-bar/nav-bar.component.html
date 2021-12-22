@@ -27,20 +27,20 @@
             </select>
             <span class="navBorder">|</span>
 
-             <a class="nav-link text-light" aria-disabled="true" (click)="changeLanguage(lang)" #lang>English</a>
-            <span class="navBorder">|</span>
+         <a class="nav-link" aria-disabled="true" (click)="changeLanguage(lang)"#lang>{{'navbar.lang'|translate}}</a>
+          <span class="navBorder">|</span>
 
-            <a class="nav-link text-light" routerLink="/ContactUs">اتصل بنا</a>
+            <a class="nav-link" routerLink="/ContactUs">{{'navbar.contact_us' | translate}}</a>
             <span class="navBorder" *ngIf="!User?.isDoctor"  >|</span>
 
-            <a class="nav-link text-light" *ngIf="!User?.isDoctor" routerLink="/Doctors"  >فزيتا للاطباء</a>
+            <a class="nav-link text-light" *ngIf="!User?.isDoctor" routerLink="/Doctors"  >{{'navbar.vezeeta_for_doctors'|translate}}</a>
             <span class="navBorder">|</span>
 
-            <a class="nav-link text-light" routerLink="/Login" *ngIf="!User">دخول</a>
+            <a class="nav-link text-light" routerLink="/Login" *ngIf="!User">{{'navbar.login'|translate}}</a>
             <span class="navBorder" *ngIf="!User">|</span>
 
             <a class="nav-link text-light btn border-1 border-light px-1 me-1" routerLink="/Register" *ngIf="!User">
-              انضم الان</a>
+              {{'navbar.sign_up'|translate}}</a>
 
 
               <div ngbDropdown class=" " *ngIf="User">
@@ -49,10 +49,9 @@
                 <div ngbDropdownMenu class="text-danger" aria-labelledby="dropdownBasic1">
                   <a ngbDropdownItem *ngIf="!User?.isDoctor" routerLink="/AllReservations/{{User?.name}}" >مواعيدي</a>
                   <a ngbDropdownItem *ngIf="User?.isDoctor" routerLink="/DoctorReservations/{{User?.name}}" >مواعيدي</a>
-                  <a ngbDropdownItem class='' (click)="logout()" >  تسجيل الخروج </a>
+                  <a ngbDropdownItem class='' (click)="logout()" > {{'navbar.logout'|translate}} </a>
                 </div>
               </div>
-
           </div>
         </div>
       </div>
