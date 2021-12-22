@@ -32,7 +32,7 @@
     </div>
 
     <hr/>
-    <div class="row row-cols-3 g-2 mb-5 px-3">
+    <div class="row row-cols-3 g-2 mb-5 px-3" *ngIf="!User?.isDoctor">
 
       <div class="col bookcard" *ngFor="let d of dates; let i=index">
         <div class=" card bookcard">
@@ -128,7 +128,7 @@
 
       <!-- llll -->
     </div>
-    <p class='text-center text_2 fw-bold opacity-75'>الحجز مسبقا والدخول باسبقية الحضور</p>
+    <p class='text-center text_2 fw-bold opacity-75' *ngIf="!User?.isDoctor">الحجز مسبقا والدخول باسبقية الحضور</p>
 
 
     <!-- Modal -->

@@ -17,7 +17,7 @@ export class DoctorGuard implements CanActivate {
 
       this.as.User.subscribe(user=>{
         console.log(user);
-        if(!user && !user.isDoctor){
+        if(!user && !user?.isDoctor){
          return this.router.navigate(['/'])
         }
         else{

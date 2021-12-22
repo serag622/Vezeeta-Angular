@@ -67,7 +67,7 @@ export class DoctorsComponent implements OnInit,OnDestroy {
 
 
    array : Doctor[] | any[] = []
-   selectDoctor(ele : HTMLInputElement){
+  async selectDoctor(ele : HTMLInputElement){
 
       console.log(ele)
       let result: Doctor[] | any[] =[]
@@ -76,19 +76,18 @@ export class DoctorsComponent implements OnInit,OnDestroy {
 
       if(ele.checked){
        console.log('checked')
-      this.ds.getDoctorsBy(ele.name,ele.value).subscribe(data=>{
-        result=data
 
-       for(let i=0;i<result.length; i++){
-        if(!this.array.includes(result[i])){
-          this.array.push(result[i])
-        }
-       }
-
-        this.Doctors=this.array
-        this.paging()
-        this.sliceArray()
-      })
+    this.ds.getDoctorsBy(ele.name, ele.value).subscribe(data => {
+          result = data;
+          for (let i = 0; i < result.length; i++) {
+            if (!this.array.includes(result[i])) {
+              this.array.push(result[i]);
+            }
+          }
+          this.Doctors=this.array
+          this.paging()
+          this.sliceArray()
+        })
     }
     else if(!ele.checked){
 

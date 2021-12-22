@@ -7,23 +7,31 @@
   <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col">اسم الدكتور</th>
+    <th scope="col" *ngIf="!User?.isDoctor">اسم الدكتور</th>
+    <th scope="col" *ngIf="User?.isDoctor">اسم المريض</th>
     <th scope="col">أين</th>
     <th scope="col">موعد الحجز </th>
     <th scope="col">تفاصيل</th>
   </tr>
   </thead>
-  <tbody class="text_3">
+  <tbody class="text_3" *ngIf="Reservations?.length">
   <tr *ngFor="let reservation of Reservations; index as i">
     <th scope="row">{{ i + 1 }}</th>
-    <td>
+    <td *ngIf="!User?.isDoctor">
       {{ reservation?.doctorName }}
+    </td>
+    <td *ngIf="User?.isDoctor">
+     {{ reservation.userName }}
     </td>
     <td>{{ reservation?.doctorLocation.city}} - {{reservation?.doctorLocation.region}}</td>
     <td>{{reservation?.bookDate}} - {{reservation?.bookhour}} : 00 </td>
-    <td *ngIf='!reservation?.isCancelled'> سعر الكشف {{reservation?.price}} <br> تيليفون العيادة {{reservation?.doctorPhone}}</td>
+    <td *ngIf='!reservation?.isCancelled && !User?.isDoctor'> سعر الكشف {{reservation?.price}} <br> تيليفون العيادة {{reservation?.doctorPhone}}</td>
+    <td *ngIf='!reservation?.isCancelled && User?.isDoctor'> ايميل المريض {{reservation?.userEmail}}<br> تيليفون المريض {{reservation?.userPhone}}</td>
     <td *ngIf='reservation?.isCancelled'> تم إلغاء الموعد  </td>
   </tr>
+  </tbody>
+  <tbody *ngIf="!Reservations?.length">
+    <td colspan='4'  class="text-center text_1 fw-bold fs-3 py-3" > لا يوجد حجوزات</td>
   </tbody>
 </table>
   </section>
