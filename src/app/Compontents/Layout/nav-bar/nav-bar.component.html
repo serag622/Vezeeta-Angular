@@ -27,26 +27,31 @@
             </select>
             <span class="navBorder">|</span>
 
-            <a class="nav-link" aria-disabled="true" (click)="changeLanguage(lang)"
-              #lang>{{'navbar.lang'|translate}}</a>
-            <span class="navBorder">|</span>
+         <a class="nav-link" aria-disabled="true" (click)="changeLanguage(lang)"#lang>{{'navbar.lang'|translate}}</a>
+          <span class="navBorder">|</span>
 
             <a class="nav-link" routerLink="/ContactUs">{{'navbar.contact_us' | translate}}</a>
+            <span class="navBorder" *ngIf="!User?.isDoctor"  >|</span>
+
+            <a class="nav-link text-light" *ngIf="!User?.isDoctor" routerLink="/Doctors"  >{{'navbar.vezeeta_for_doctors'|translate}}</a>
             <span class="navBorder">|</span>
 
-            <a class="nav-link" routerLink="/Doctors">{{'navbar.vezeeta_for_doctors'|translate}}</a>
-            <span class="navBorder">|</span>
+            <a class="nav-link text-light" routerLink="/Login" *ngIf="!User">{{'navbar.login'|translate}}</a>
+            <span class="navBorder" *ngIf="!User">|</span>
 
-            <a class="nav-link" routerLink="/Login" *ngIf="!isUser">{{'navbar.login'|translate}}</a>
-            <span class="navBorder" *ngIf="!isUser">|</span>
-
-            <a class="nav-link btn border-1 border-light px-1 me-1" routerLink="/Register" *ngIf="!isUser">
+            <a class="nav-link text-light btn border-1 border-light px-1 me-1" routerLink="/Register" *ngIf="!User">
               {{'navbar.sign_up'|translate}}</a>
 
-            <a class="nav-link btn border-1 border-light px-2 me-2" *ngIf="isUser" (click)="logout()">
-              {{'navbar.logout'|translate}}</a>
-            <!-- <a class="nav-link btn border-1 border-light px-2 me-2" *ngIf="isUser" (click)="logout()">
-              {{userDashbord.name}}</a> -->
+
+              <div ngbDropdown class=" " *ngIf="User">
+                <a class="nav-link btn border-1 border-light px-2 me-1 text-light" id="dropdownBasic1" *ngIf="!User?.isDoctor"  ngbDropdownToggle> {{User?.name}} </a>
+                <a class="nav-link btn border-1 border-light px-2 me-1 text-light" id="dropdownBasic1" *ngIf="User?.isDoctor"  ngbDropdownToggle> Dr / {{User?.name}} </a>
+                <div ngbDropdownMenu class="text-danger" aria-labelledby="dropdownBasic1">
+                  <a ngbDropdownItem *ngIf="!User?.isDoctor" routerLink="/AllReservations/{{User?.name}}" >مواعيدي</a>
+                  <a ngbDropdownItem *ngIf="User?.isDoctor" routerLink="/DoctorReservations/{{User?.name}}" >مواعيدي</a>
+                  <a ngbDropdownItem class='' (click)="logout()" > {{'navbar.logout'|translate}} </a>
+                </div>
+              </div>
           </div>
         </div>
       </div>

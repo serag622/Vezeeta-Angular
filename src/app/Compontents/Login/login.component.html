@@ -1,6 +1,13 @@
 <section class="container-fluid">
   <section class="container">
+
     <div id="logreg-forms">
+
+      <div class=" d-flex  bcolor text-center text-light py-2" style="border-radius: 15px 15px 0px 0px;">
+         <div class="col" style="cursor: pointer;"> <h5 class="font-weight-normal fw-bolder " [ngClass]="{'fs-2 shadow' :!isDoctor}" (click)='isDoctor=false' >مريض</h5></div>
+         <div class='fs-4 text-center'>|</div>
+         <div class="col" style="cursor: pointer;"> <h5 class="font-weight-normal fw-bolder" [ngClass]="{'fs-2 shadow' :isDoctor}"  (click)='isDoctor=true' >دكتور</h5></div>
+
       <div
         class="bg-primary text-center text-light p-1"
         style="border-radius: 15px 15px 0px 0px; width: 100%"
@@ -8,31 +15,31 @@
         <span>
           <h5 class="mb-2 font-weight-normal fw-bolder">{{'login.login'|translate}}</h5>
         </span>
+
       </div>
 
-      <form class="form-signin" #L="ngForm" (ngSubmit)="login(L)">
-        <div class="social-login row g-3 justify-content-center">
+      <form  class="form-signin p-3 " #L="ngForm" (ngSubmit)="login(L)">
+
+        <!-- <div class="social-login row g-3 justify-content-center">
           <div class="col-sm-6 col-12">
             <button class="btn facebook-btn social-btn w-100" type="button">
-              <span
-                ><i class="fab fa-facebook-f"></i> {{'login.facebook'|translate}}</span
-              >
+
+              <span><i class="fab fa-facebook-f"></i> {{'login.facebook'|translate}}</span>
             </button>
           </div>
 
 
-           <div class="col-sm-6 col-12">
-            <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-longtitle="true"></div> -->
+          <div class="col-sm-6 col-12">
+            <div class="g-signin2" data-onsuccess="onSignIn" data-longtitle="true"></div>
             <button class="btn social-btn btn-danger w-100" type="button">
-              <span
-                ><i class="fab fa-google-plus-g"></i> {{'login.google'|translate}}</span
-              >
+             <span><i class="fab fa-google-plus-g"></i> الدخول
+                بـواسطه Google</span>
             </button>
           </div>
-        </div>
+        </div> -->
+        <!-- <p style="text-align: center">أو</p> -->
 
-        <p style="text-align: center">{{'login.or'|translate}}</p>
-
+          
         <div class="text-end mb-3">
           <label for="email" class="mb-2">  {{'login.email'|translate}} </label>
           <input
@@ -53,13 +60,14 @@
           </div>
           <div
             class="alert alert-danger"
-            *ngIf="email.touched && email.errors?.email"
-          >
+            *ngIf="email.touched && email.errors?.email" >
             {{'valid_login.email_valid'|translate}}
+
           </div>
         </div>
 
         <div class="text-end mb-3">
+
           <label for="password" class="mb-2"> {{'login.password'|translate}} </label>
           <input
             ngModel
@@ -93,6 +101,7 @@
         <div class="d-flex justify-content-between p-3">
           <a href="#" id="forgot_pswd">{{'login.forget_password'|translate}}</a>
           <div class="">
+
             <label for="rememberme"> {{'login.check_remember_me'|translate}} </label>
             <input
               type="checkbox"
@@ -104,19 +113,17 @@
         </div>
 
         <hr />
-        <button
-          class="btn btn-primary btn-block w-100"
-          type="button"
-          id="btn-signup"
-          (click)="toBe()"
-        >
+        <button class="btn btn-primary btn-block w-100" type="button" id="btn-signup" (click)="toBe()">
           <i class="fas fa-user-plus"></i>
          {{'login.sign_up'|translate}}
         </button>
+
+        <div class="alert alert-danger mt-2 text-center p-3" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
       </form>
-      <div class="alert alert-danger" *ngIf="errorMessage">
-        {{ errorMessage }}
-      </div>
+
+
     </div>
   </section>
 </section>

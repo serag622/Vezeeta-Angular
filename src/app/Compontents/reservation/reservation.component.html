@@ -1,0 +1,46 @@
+<section class="container-fluid p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card p-0" style="border-radius: 15px;">
+          <div class="card-header py-3">
+            <h4 class="card-title text-success fw-bold">لقد تم حجز ميعادك بنجاح</h4>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><i class="far fa-envelope text_3 ms-3"></i>ابلغنا دكتور {{Reservation?.doctorName}}</p>
+            <p class="card-text"> <i class="bi bi-cash text_3 ms-3" style="font-size: 20px"></i>
+              الكشف {{Reservation?.price}} جنيه</p>
+            <hr>
+
+            <p class="card-text"><i class="bi bi-telephone text_3 ms-3" style="font-size: 20px"></i>رقم تيليفون
+              العيادة
+              :{{Reservation?.doctorPhone}}</p>
+            <p class="card-text"><i class="far fa-business-time text_3 ms-3"></i>تفاصيل الحجز</p>
+            <hr>
+            <p ><span class='ms-5'>اسم المريض</span>{{Reservation?.userName}}</p>
+            <hr>
+            <p class=""><span class='ms-5'>تاريخ الحجز</span>
+              {{Reservation?.bookDate}}  من{{ Reservation?.bookhour}}:00 مساءا الي {{Reservation?.bookhour + 1}}:00 مساءا: </p>
+            <br>
+            <p class="card-text text-center text_1 fs-5">الحجز مسبقا والدخول باسبقية الحضور</p>
+            <hr>
+            <p class="card-text"><span class="ms-5">اسم الدكتور</span> {{Reservation?.doctorName}} </p>
+            <hr>
+            <p class="card-text"><span class='ms-5'>مكان العيادة</span> {{Reservation?.doctorLocation.city}} - {{Reservation?.doctorLocation.region}} </p>
+            <hr>
+
+            <div class="d-flex  justify-content-between py-2">
+              <a class="btn bcolor text-light fs-5 w-50" type="button" routerLink="/AllReservations/{{Reservation?.userName}}" >مواعيدي</a>
+              <button class="btn btn-outline-secondary w-25 " type="button" (click)="deleteReservation()"  >إلغاء الحجز</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class=" col-4">
+
+  </div> -->
+
+    </div>
+  </div>
+</section>

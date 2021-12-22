@@ -29,6 +29,10 @@ export class DocdorService {
    return doctor;
   }
 
+  getDoctorsBy(name :string,value :string){
+    return this.firestore.collection('Doctors',ref=>ref.where( name,'==' ,value)).valueChanges({ idField: 'id' })
+  }
+
 
 
 

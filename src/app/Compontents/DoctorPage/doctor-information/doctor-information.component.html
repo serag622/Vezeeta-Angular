@@ -4,15 +4,15 @@
     style="border-radius: 10px 10px 10px 10px">
     <div class="d-flex p-3 w-100">
       <div class="ms-3 w-25">
-        <img class="rounded-circle img-fluid" src={{doctor.imgDoctor}} alt="" />
+        <img class="rounded-circle img-fluid" src={{doctor?.imgDoctor}} alt="" />
       </div>
       <div class="w-75">
         <div class="d-flex justify-content-between">
-          <h4 class="text-secondary">دكتور {{doctor.name}}</h4>
+          <h4 class="text-secondary">دكتور {{doctor?.name}}</h4>
           <h1 class="text-secondary fw-bolder fs-5">٦٣,٥١٣ مشاهدة</h1>
         </div>
         <p class="text-secondary fw-bolder fs-5">
-          {{doctor.category.name}}{{doctor.category.subCategory}}
+          {{doctor?.category.name}}{{doctor?.category.subCategory}}
         </p>
       </div>
     </div>
@@ -46,7 +46,7 @@
         <span class="fw-bolder">معلومات عن الدكتور</span>
         <br />
         <span class="text-secondary fw-bolder">
-         {{doctor.information}}
+         {{doctor?.information}}
         </span>
       </div>
     </div>
@@ -63,8 +63,8 @@
         <br />
         <div>
           <img
-            src={{doctor.imgsClinic[i]}}
-            alt="" width="18%" height="100%" class="ps-1" *ngFor="let img of doctor.imgsClinic; let i=index" />
+            src={{doctor?.imgsClinic[i]}}
+            alt="" width="18%" height="100%" class="ps-1" *ngFor="let img of doctor?.imgsClinic; let i=index" />
 
         </div>
       </div>

@@ -11,25 +11,29 @@ export class LoginComponent implements OnInit {
 
   errorMessage: string = ''
 
+  isDoctor: boolean = false
+
   constructor(private as: AuthService, private router: Router) { }
 
   ngOnInit(): void { }
 
   login(form: any) {
     let data = form.value;
-    this.as
-      .login(data.email, data.password)
-      .then(result => {
-        this.errorMessage = ''
-        console.log(result)
+      // if(this.isDoctor) {
+      //   console.log('doctor')
+      //   this.as.loginDoctor(data.email,data.password)
+      // }
+      // else{
+      //   console.log('user')
+      //   this.as.loginUser(data.email,data.password)
+      // }
+      console.log(this.isDoctor)
+      this.as.login(data.email,data.password,this.isDoctor).then(() => {
+        this.errorMessage=''
+        this.router.navigate(['/'])
+      }).catch(() => {
+        this.errorMessage=' the email or password is invalid '
       })
-      .then(() => {
-        this.router.navigate(['/']);
-      })
-      .catch(err => {
-        this.errorMessage = err.message
-      })
-
 
   }
 
