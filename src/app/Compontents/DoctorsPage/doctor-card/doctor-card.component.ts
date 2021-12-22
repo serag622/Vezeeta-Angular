@@ -8,7 +8,7 @@ import { Doctor } from 'src/app/model/Doctor.model';
 })
 export class DoctorCardComponent implements OnInit {
   @Input() Doctor !:Doctor | any;
-
+  User:Doctor | any =JSON.parse(localStorage.getItem('User') as string)
   constructor() { }
 
   ngOnInit(): void {

@@ -27,6 +27,7 @@ export class AuthService {
         return  of(null);
       }
     })).subscribe(user=>{
+      localStorage.setItem("User",JSON.stringify(user));
       this.User.next(user)
     })
 
@@ -55,25 +56,36 @@ export class AuthService {
 
 
 
-  login(email: string , password: string,isDoctor:boolean) : Promise<any> {
+  login(email: string , password: string,isDoctor:boolean):Promise<any>{
 
-  this.us.getUserbyEmail(email).subscribe((next) => {
-   const user : User[] | any = next;
-   console.log(user)
-   console.log(user[0])
+  // this.us.getUserbyEmail(email).subscribe((next) => {
+  //  const user : User[] | any = next;
+  //  console.log(user)
+  //  console.log(user[0])
+  //   switch (user[0].isDoctor) {
+  //     case isDoctor:
+  //       console.log('ok')
+  //       return this.log(email, password)
+  //         break;
+  //     default:
+  //       return Promise.reject
+  //         break;
+  //   }
+  // })
+  //  return Promise.reject()
 
-    switch (user[0].isDoctor) {
-      case isDoctor:
-        console.log('ok')
-        return this.log(email, password)
-          break;
+   this.faAuth.signInWithEmailAndPassword(email, password).then((data: any) => {
+      this.us.getUserbyEmail(data?.user?.email).subscribe((user: any) => {
+        if (user[0].isDoctor == isDoctor) {
+          return Promise.resolve(user[0]);
+        }
+        else {
+          return Promise.reject;
+        }
+      });
+    });
 
-      default:
-        return Promise.reject
-          break;
-    }
-  })
-   return Promise.reject()
+    return Promise.resolve()
   }
 
 

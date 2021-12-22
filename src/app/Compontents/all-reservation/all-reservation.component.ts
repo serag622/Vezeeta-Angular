@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Doctor } from 'src/app/model/Doctor.model';
 import { Reservation } from 'src/app/model/Reservation.model';
 import { ReservationService } from 'src/app/services/reservation.service';
 
@@ -13,6 +14,7 @@ export class AllReservationComponent implements OnInit,OnDestroy {
 
   Reservations !: Reservation[] | any
   ResSubscribe !: Subscription
+  User:Doctor | any =JSON.parse(localStorage.getItem('User') as string)
 
   constructor( private rs : ReservationService , private activatedRoute : ActivatedRoute) { }
 

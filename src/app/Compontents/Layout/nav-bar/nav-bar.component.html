@@ -31,9 +31,9 @@
           <span class="navBorder">|</span>
 
             <a class="nav-link text-light" routerLink="/ContactUs">{{'navbar.contact_us' | translate}}</a>
-            <span class="navBorder" *ngIf="!User?.isDoctor"  >|</span>
+            <span class="navBorder" >|</span>
 
-            <a class="nav-link text-light" *ngIf="!User?.isDoctor" routerLink="/Doctors"  >{{'navbar.vezeeta_for_doctors'|translate}}</a>
+            <a class="nav-link text-light" routerLink="/Doctors"  >{{'navbar.vezeeta_for_doctors'|translate}}</a>
             <span class="navBorder">|</span>
 
             <a class="nav-link text-light" routerLink="/Login" *ngIf="!User">{{'navbar.login'|translate}}</a>
