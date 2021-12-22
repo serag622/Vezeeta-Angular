@@ -29,11 +29,10 @@ export class LoginComponent implements OnInit {
       // }
       console.log(this.isDoctor)
       this.as.login(data.email,data.password,this.isDoctor).then(() => {
-        this.errorMessage=""
-        this.router.navigate(["/"])
+        this.errorMessage=''
+        this.router.navigate(['/'])
       }).catch(() => {
-        this.errorMessage="you entered inValid Email or Password"
-        console.log('error')
+        this.errorMessage=' the email or password is invalid '
       })
 
   }

@@ -17,6 +17,8 @@ export class CategoryService {
     this.categoriesCollection=this.fs.collection<CategoryItems>("Speciality");
     return this.categoriesCollection.valueChanges({idField:"id"})
   }
+
+  
   getCategoryById(): Category | any {
 
   }

@@ -7,13 +7,13 @@
 
           <div class="col-md-2">
             <div class='overflow-hidden rounded-circle'>
-              <img src={{Doctor.imgDoctor}} class="img-fluid" alt="" >
+              <img src={{Doctor?.imgDoctor}} class="img-fluid" alt="" >
             </div>
           </div>
 
           <div class="col-md-5 px-4">
-            <h4 class="card-title text_3"> {{Doctor.name}}</h4>
-            <p class="card-text text_3">{{Doctor.degree}} {{Doctor.category.name}}....</p>
+            <h4 class="card-title text_3"> دكتور / {{Doctor?.name}}</h4>
+            <p class="card-text text_3">{{Doctor?.degree}} {{Doctor?.category.name}}....</p>
             <div style="color: orange; font-size: larger;">
               <span>
                 <i class="bi bi-star-half"></i>
@@ -28,13 +28,13 @@
 
             <p class="card-text">
               <small class="text-muted">
-                <p class="mb-1"> <i class="fal fa-stethoscope text-primary ms-2 "></i> دكتور {{Doctor.category.subCategory}}</p>
+                <p class="mb-1"> <i class="fal fa-stethoscope text-primary ms-2 "></i> دكتور {{Doctor?.category.subCategory}}</p>
                 <p class="mb-1"><i class="bi bi-geo-alt text-primary ms-2"
-                    style="font-size: 20px"></i>{{Doctor.location.city}}</p>
+                    style="font-size: 20px"></i>{{Doctor?.location.city}}</p>
                 <p class="mb-1"><i class="bi bi-cash text-primary ms-2" style="font-size: 20px"></i>
-                  الكشف{{Doctor.price}} جنيه </p>
+                  الكشف{{Doctor?.price}} جنيه </p>
                 <p class="mb-1"><i class="bi bi-circle-half text-primary ms-2" style="font-size: 20px"></i>مدة الانتظار
-                  : {{Doctor.waiting}} دقيقة </p>
+                  : {{Doctor?.waiting}} دقيقة </p>
                 <p class="mb-1"> <i class="bi bi-telephone text-primary ms-2" style="font-size: 20px"></i> ١٦٦٧٦ - سعر
                   مكالمة عادية</p>
               </small>

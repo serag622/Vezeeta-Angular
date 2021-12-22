@@ -55,27 +55,31 @@ export class AuthService {
 
 
 
-  login(email: string , password: string,isDoctor:boolean) :Promise<any> {
+  login(email: string , password: string,isDoctor:boolean) : Promise<any> {
+
   this.us.getUserbyEmail(email).subscribe((next) => {
-   const user : User[] | any=next;
+   const user : User[] | any = next;
    console.log(user)
    console.log(user[0])
 
     switch (user[0].isDoctor) {
       case isDoctor:
         console.log('ok')
-         return (this.faAuth.signInWithEmailAndPassword(email, password))
-        break;
+        return this.log(email, password)
+          break;
 
       default:
         return Promise.reject
-        break;
+          break;
     }
   })
-
    return Promise.reject()
   }
 
+
+  log(email: string , password: string){
+    return this.faAuth.signInWithEmailAndPassword(email, password)
+  }
 
 
   logout() {

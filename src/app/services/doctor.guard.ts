@@ -3,12 +3,10 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTr
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class AuthguardGuard implements CanActivate {
+export class DoctorGuard implements CanActivate {
 
   constructor(private as : AuthService , private router: Router){}
 
@@ -16,17 +14,17 @@ export class AuthguardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-     this.as.User.subscribe(user=>{
-       console.log(user);
-       if(user){
-        return this.router.navigate(['/'])
-       }
-       else{
-         return true;
-       }
 
-     })
+      this.as.User.subscribe(user=>{
+        console.log(user);
+        if(!user && !user.isDoctor){
+         return this.router.navigate(['/'])
+        }
+        else{
+          return true;
+        }
 
+      })
     return true;
   }
 

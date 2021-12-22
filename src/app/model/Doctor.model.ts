@@ -12,7 +12,8 @@ export interface Doctor{
   waiting?: number;
   mobile?: number;
   imgsClinic?:string[],
-  clinicTime :clinicTime
+  clinicTime :clinicTime,
+  genders?: string
 
 }
 

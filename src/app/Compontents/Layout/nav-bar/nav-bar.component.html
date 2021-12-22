@@ -31,9 +31,9 @@
             <span class="navBorder">|</span>
 
             <a class="nav-link text-light" routerLink="/ContactUs">اتصل بنا</a>
-            <span class="navBorder"  >|</span>
+            <span class="navBorder" *ngIf="!User?.isDoctor"  >|</span>
 
-            <a class="nav-link text-light" routerLink="/Doctors"  >فزيتا للاطباء</a>
+            <a class="nav-link text-light" *ngIf="!User?.isDoctor" routerLink="/Doctors"  >فزيتا للاطباء</a>
             <span class="navBorder">|</span>
 
             <a class="nav-link text-light" routerLink="/Login" *ngIf="!User">دخول</a>

@@ -25,10 +25,10 @@
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <ul>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff"> استاذ</li>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">مدرس</li>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">استشاري</li>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">اخصائى</li>
+                    <li><input  #degree (change)="selectDoctor(degree)" type="checkbox" class="input-controls ms-2" value="استاذ" name='degree' > استاذ</li>
+                    <li><input  #degree2 (change)="selectDoctor(degree2)" type="checkbox" class="input-controls ms-2" value="مدرس" name="degree" > مدرس </li>
+                    <li><input #degree3 (change)="selectDoctor(degree3)" type="checkbox" class="input-controls ms-2" value="استشاري" name='degree' >استشاري</li>
+                    <li><input #degree4 (change)="selectDoctor(degree4)" type="checkbox" class="input-controls ms-2" value="اخصائى" name='degree' >اخصائى</li>
                   </ul>
                 </div>
               </div>
@@ -45,14 +45,14 @@
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <ul>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">دكتورة</li>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">دكتور</li>
+                    <li><input #female (change)="selectDoctor(female)" type="checkbox" class="input-controls ms-2" value="female" name="gender" >دكتورة</li>
+                    <li><input #male (change)="selectDoctor(male)" type="checkbox" class="input-controls ms-2" value="male" name='gender'>دكتور</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div class="accordion-item">
+            <!-- <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button d-inline collapsed b1 text-end" type="button" data-bs-toggle="collapse"
                   data-bs-target="#flush-3" aria-expanded="false" aria-controls="flush-3">
@@ -69,26 +69,10 @@
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> -->
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button d-inline collapsed b1 text-end" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-4" aria-expanded="false" aria-controls="flush-4">
-                  <span class="text_3 fw-bold">   <i class="fas fa-tags"></i>  اكواد الخصم</span>
-                </button>
-              </h2>
-              <div id="flush-4" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <ul>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff"> يقبل اكواد الخصم </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
 
-            <div class="accordion-item">
+            <!-- <div class="accordion-item">
               <h2 class="accordion-header" id="headingFive">
                 <button class="accordion-button d-inline collapsed b1 text-end" type="button" data-bs-toggle="collapse"
                   data-bs-target="#flush-5" aria-expanded="false" aria-controls="flush-5">
@@ -99,30 +83,37 @@
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <ul>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">الكل</li>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">اقل من 50</li>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">من 50حتي100</li>
                     <li><input type="checkbox" class="input-controls ms-2" value="proff">من 100 حتي200</li>
                     <li><input type="checkbox" class="input-controls ms-2" value="proff">من 200 ل300</li>
                     <li><input type="checkbox" class="input-controls ms-2" value="proff">كثر من 300</li>
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingSix">
                 <button class="accordion-button d-inline collapsed b1 text-end" type="button" data-bs-toggle="collapse"
                   data-bs-target="#flush-6" aria-expanded="false" aria-controls="flush-6">
-                  <span class="text_3 fw-bold"> <i class="fad fa-stethoscope"></i>   المنشأة</span>
+                  <span class="text_3 fw-bold">   <i class="fad fa-money-bill-wave"></i> التخصص </span>
                 </button>
               </h2>
               <div id="flush-6" class="accordion-collapse collapse" aria-labelledby="headingSix"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <ul>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">مستشفي</li>
-                    <li><input type="checkbox" class="input-controls ms-2" value="proff">عيادة</li>
+
+                    <!-- <li *ngFor='let c of category; let i= index' ><input  #input (change)="selectDoctor(input)" type="checkbox" class="input-controls ms-2" value="{{c.name}}" name="category.name" >{{c.name}}</li> -->
+
+                    <!-- <li><input  #cat1 (change)="selectDoctor(cat1)" type="checkbox" class="input-controls ms-2" value='جلدية' name="category.name"> جلدية</li>
+                    <li><input  #cat2 (change)="selectDoctor(cat2)" type="checkbox" class="input-controls ms-2" value='امراض دم' name="category.name" >امراض دم</li>
+                    <li><input  #cat3 (change)="selectDoctor(cat3)" type="checkbox" class="input-controls ms-2" value='نفسي' name="category.name" >نفسى</li>
+                    <li><input  #cat4 (change)="selectDoctor(cat4)" type="checkbox" class="input-controls ms-2" value=' انف واذن وحنجرة' name="category.name" > انف واذن وحنجرة</li>
+                    <li><input  #cat5 (change)="selectDoctor(cat5)" type="checkbox" class="input-controls ms-2" value='عظام' name="category.name" >عظام</li>
+                    <li><input  #cat6 (change)="selectDoctor(cat6)" type="checkbox" class="input-controls ms-2" value='أطفال وحديثي الولادة' name="category.name" >أطفال وحديثي الولادة</li>
+                    <li><input  #cat7 (change)="selectDoctor(cat7)" type="checkbox" class="input-controls ms-2" value='نساء و توليد' name="category.name" >نساء و توليد</li>
+                    <li><input  #cat8 (change)="selectDoctor(cat8)" type="checkbox" class="input-controls ms-2" value='أسنان' name="category.name" >أسنان</li> -->
+
                   </ul>
                 </div>
               </div>
@@ -135,11 +126,12 @@
       <div class="col-lg-9 pt-5">
         <div class="d-flex">
           <h4 class="text_1 fw-bold">كل التخصصات</h4>
-          <p class="text_2 mx-2 mt-1 fw-bold">4427 دكتور</p>
+          <p class="text_2 mx-2 mt-1 fw-bold">{{Doctors.length}} دكتور</p>
         </div>
         <div class="row row-cols-1">
 
         <app-doctor-card *ngFor='let d of DoctorsViewed; let i =index' [Doctor]='d' ></app-doctor-card>
+        <h1 class="text_2 text-center fw-bold" *ngIf="!DoctorsViewed.length" >لا يوجد نتائج </h1>
 
         </div>
       </div>
