@@ -35,6 +35,7 @@ export class AllReservationComponent implements OnInit,OnDestroy {
   }
   else if(path == "DoctorReservations")
   {
+    console.log(name)
     this.ResSubscribe = this.rs.GetAllReservationofDoctor(name).subscribe(res =>{
       this.Reservations = res;
     })
